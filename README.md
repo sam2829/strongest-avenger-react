@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Strongest Avenger React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+Stongest Avenger React is designed so that the user is able to post images or videos of the favourite Marvel character or others being their favourite character and argue that they are the strongest. The User is able to view a list or posts from all other users. The user can register or login to their own account and be available then to make their own posts, comment on other posts, agree, follow other users, like other posts, update their own profile to tell abit about themselves and their favourite character.
 
-In the project directory, you can run:
+responvie image gooo here with deployed site linnk!!!
 
-### `npm start`
+## Project Goals
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This is my fifth portfolio project for the Code Institute and the goal with this project is to display my new skills in using frameworks such as React (for the frontend) and Django Rest Framework. I have decided to build a social media website where users are able to create accounts and make posts or their favourite Marvel characters or them being their favourite Marvel characters. The User can also, comment, like, agree on other posts and being able to follow other users to see their posts.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This repository is for the React front end of Strongest Avenger. The project also utilises a Django Rest Framework API, which you can find the link to that repository [here](https://github.com/sam2829/strongest-avenger-drf)
 
-### `npm test`
+## Contents
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Strongest Avenger React](#strongest-avenger-react)
+  - [Overview](#overview)
+  - [Project Goals](#project-goals)
+  - [Contents](#contents)
+  - [User Experience](#user-experience)
+    - [The strategy Plane](#the-strategy-plane)
+      - [Ideal User](#ideal-user)
+      - [Site Goals](#site-goals)
+      - [First Time Visitor Goals](#first-time-visitor-goals)
+      - [Returning Visitor Goals](#returning-visitor-goals)
+    - [Agile Planning](#agile-planning)
+      - [User Stories](#user-stories)
+    - [Skeleton Plane](#skeleton-plane)
+      - [Wireframes](#wireframes)
+      - [Database Schema](#database-schema)
+      - [Security](#security)
+    - [The Scope Plane](#the-scope-plane)
 
-### `npm run build`
+## User Experience
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### The Strategy Plane
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
