@@ -86,3 +86,156 @@ It was carried out this way to try ensuring that all core requirements were comp
 The kanban board was created using GitHub projects, this helped me be able to see all my user stories and be able to keep track of which ones had been done, to do or in progress.
 
 ![User Stories Screenshot](docs/readme_screenshots/user-story-screenshot.png)
+
+[Back to top](#strongest-avenger-react)
+
+#### User Stories
+
+The following user stories were completed throughout the development.
+
+Navbar navigation:
+
+  - As a User I can clearlyview the navbar from every page so that I can easily navigate betweem pages.
+
+Routing:
+
+  - As a User I can navigate through pages quickly so that I can view content seamlessly without page refresh so that received benefit.
+
+User sign up:
+
+  - As a User I can create a new account so that I can use all the features on the site for signed up users.
+
+User sign in:
+
+  - As a User I can sign in to my account so that I can use the site like all logged in users.
+
+Logged in status:
+
+  - As a User I can tell if I am logged so that I know I can log in or out if I need to.
+
+Refresh access tokens:
+
+  - As a user I can maintain my logged-in status until I decide I want to logout ** so that ** I have a better user experience.
+
+Conditional rendering:
+
+  - As a logged out user I can see the sign in and sign up options so that I can sign in / sign up.
+
+Avatar:
+
+  - As a User I can view the user's avatars so that I can easily identify the users.
+
+Create posts:
+
+  - As a logged in user I can create posts so that share images or videos of my favourite marvel characters.
+
+Post can't contain both image and video:
+
+  - As a logged in user I can post an image or video but not both in one post so that only one image or video is displayed clearly at one time.
+
+Post must contain either image or post:
+
+  - As a logged in user I can post an image or video and cannot make a post without neither so that every post will have a clear image or video.
+
+Like a post:
+
+  - As a logged in user I can like a post so that I can show support for the posts that interest me.
+
+View most recent posts:
+
+  - As a User I can I can view all the most recent posts by most recently created so that I am up to date and always see the newest posts.
+
+Search for posts by keywords:
+
+  - As a User I can **search for posts by hero name, post title, username ** so that I am able to find the posts I am interested in.
+
+Search by categories:
+
+  - As a User I can search by categories of posts so that I can easily find the posts I'm interested in.
+
+View liked posts:
+
+  - As a logged in user I can view the posts Ive liked so that I can revisit the posts I've liked the most.
+
+View posts of followed users:
+
+  - As a logged in user I can view the posts of all the users I follow so that I can see what keep up to date with what my favourite users are posting.
+
+Infinite scroll:
+
+  - As a user I can keep scrolling through the posts, that are loading automatically so that I don't have to keep clicking between pages.
+
+View post in full:
+
+  - As a user I can click on a post and view it in full so that I can see the post and all the comments about the post.
+
+Edit post:
+
+  - As a logged in post owner I can edit my post so that I can make corrections or update the post.
+
+Delete post:
+
+  - As a logged in post owner I can delete my post so that if I want to delete the most so it's no longer on show I can.
+
+Create a comment:
+
+  - As a logged in user I can add comments to a post so that so I can share my thoughts and join in, in conversations.
+
+Edit comment:
+
+  - As a logged in comment owner I can edit my own comment so that so I can correct errors or update my existing comment.
+
+Delete comments:
+
+  - As a logged in comment owner I can delete my own comments so that I can control removal of my comment from the application.
+
+Comment date:
+
+  - As a user I can see how long ago a comment was made so that I know how old a comment is.
+
+Post agree:
+
+  - As a logged in user I can create a comment and when doing so click agree so that people can see if I believe I agree with the post that the character is the strongest avenger.
+
+Profile page:
+
+  - As a user I can view other users profiles so that I can see their posts and learn more about them.
+
+Most followed profiles:
+
+  - As a user I can see the most followed profiles so that I can see which are the most popular and if I want to the follow.
+
+User profile:
+
+  - As a user I can view statistics about a user and how active they are so that I can learn more about them.
+
+Follow / unfollow:
+
+  - As a logged in user I can decide if I wish to follow or unfollow a user so that I can see and remove posts by specific users in my posts feed.
+
+View all posts by a specific user:
+
+  - As a user I can view all posts by a specific user so that I can view all their posts and keep up to date with their recent posts.
+
+Edit profile:
+
+  - As a logged in user I can edit my own profile so that I can change my profile image, change my favourite character if that changes, bio and username.
+
+Update username and password:
+
+  - As a logged in user I can update my username and password so that I can change my display name and keep my profile secure.
+
+Report issues:
+
+  - As a logged in user I can report issues on a post so that site owner is aware that abuse has taken place, spam, wrong category or other issues.
+
+Admin can view reports:
+
+  - As a site admin I can view all reports and update them if they have been resolved so that any problems can be rectified and users have a better user experience.
+
+Admin can delete posts, comments:
+
+  - As a site admin I can delete any posts, comments etc so that any issues can be resolved effectively and users can have a better user experience.
+
+  [Back to top](#strongest-avenger-react)
+
