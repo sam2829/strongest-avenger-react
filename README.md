@@ -75,3 +75,14 @@ Strongest Avenger is intended for people to have somewhere where they can share 
 - User can search for posts by username, title, character name.
 - User can use a predefined search by character category.
 
+[Back to top](#strongest-avenger-react)
+
+### Agile Planning
+
+This project was developed using agile methodologies by delivering small features across the duration of the project. This broke down the build of the project into a lot more manageable parts and was able to select which user stories were more important for the site.
+
+It was carried out this way to try ensuring that all core requirements were completed first to give the project a complete feel and to make sure the most important user stories were implemented. When clicked on and opened the user story, the user story was assigned a label "must have", "should have" or "could have" so I would know the importance of the user story.
+
+The kanban board was created using GitHub projects, this helped me be able to see all my user stories and be able to keep track of which ones had been done, to do or in progress.
+
+![User Stories Screenshot](docs/readme_screenshots/user-story-screenshot.png)
