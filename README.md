@@ -239,3 +239,126 @@ Admin can delete posts, comments:
 
   [Back to top](#strongest-avenger-react)
 
+### The Skeleton Plane
+
+#### Wireframes
+
+Wireframes were used to create a prototype of the project which may change during its development.
+
+<details>
+
+<summary>Desktop</summary>
+
+Homepage logged out:
+
+![Desktop Homepage Logged Out Wireframe](docs/readme_screenshots/desktop-homepage-wireframe.png)
+
+Homepage logged in:
+
+![Desktop Homepage Logged In Screenshot](docs/readme_screenshots/desktop-homepage-logged-in-wireframe.png)
+
+Sign up page:
+
+![Desktop Sign Up Wireframe](docs/readme_screenshots/desktop-sign-up-wireframe.png)
+
+Sign in page:
+
+![Desktop Sign Up Wireframe](docs/readme_screenshots/desktop-sign-in-wireframe.png)
+
+Profile page logged out:
+
+![Desktop Profile Page Logged Out Wireframe](docs/readme_screenshots/desktop-profile-page-logged-out-wireframe.png)
+
+Profile page logged in:
+
+![Desktop Profile Page Logged In Wireframe](docs/readme_screenshots/desktop-profile-page-logged-in-wireframe.png)
+
+Edit profile page:
+
+![Desktop Edit Profile Wireframe](docs/readme_screenshots/desktop-edit-profile-wireframe.png)
+
+Post form page:
+
+![Desktop Post Form Wireframe](docs/readme_screenshots/desktop-post-form-wireframe.png)
+
+Full post page logged out:
+
+![Desktop Full Post Logged Out Wireframe](docs/readme_screenshots/desktop-full-post-logged-out-wireframe.png)
+
+Full post page logged in:
+
+![Desktop Full Post Logged In Wireframe](docs/readme_screenshots/desktop-full-post-logged-in-wireframe.png)
+
+Report form:
+
+![Desktop Report Form Wireframe](docs/readme_screenshots/desktop-report-form-wireframe.png)
+
+Change Username form:
+
+![Desktop Change Username Wireframe](docs/readme_screenshots/desktop-change-username-wireframe.png)
+
+Change password form:
+
+![Desktop Change Password Wireframe](docs/readme_screenshots/desktop-change-password-wireframe.png)
+
+</details>
+
+<details>
+
+<summary>Mobile</summary>
+
+Homepage logged out:
+
+![Mobile Homepage Logged Out Wireframe](docs/readme_screenshots/mobile-homepage-logged-out-wireframe.png)
+
+Homepage logged in:
+
+![Mobile Homepage Logged In Screenshot](docs/readme_screenshots/mobile-homepage-logged-in-wireframe.png)
+
+Sign up page:
+
+![Mobile Sign Up Wireframe](docs/readme_screenshots/mobile-sign-up-wireframe.png)
+
+Sign in page:
+
+![Mobile Sign Up Wireframe](docs/readme_screenshots/mobile-sign-in-wireframe.png)
+
+Profile page logged out:
+
+![Mobile Profile Page Logged Out Wireframe](docs/readme_screenshots/mobile-profile-page-logged-out-wireframe.png)
+
+Profile page logged in:
+
+![Mobile Profile Page Logged In Wireframe](docs/readme_screenshots/mobile-profile-page-logged-in-wireframe.png)
+
+Edit profile page:
+
+![Mobile Edit Profile Wireframe](docs/readme_screenshots/mobile-edit-profile-wireframe.png)
+
+Post form page:
+
+![Mobile Post Form Wireframe](docs/readme_screenshots/mobile-post-form-wireframe.png)
+
+Full post page logged out:
+
+![Mobile Full Post Logged Out Wireframe](docs/readme_screenshots/mobile-full-post-logged-out-wireframe.png)
+
+Full post page logged in:
+
+![Mobile Full Post Logged In Wireframe](docs/readme_screenshots/mobile-full-post-logged-in-wireframe.png)
+
+Report form:
+
+![Mobile Report Form Wireframe](docs/readme_screenshots/mobile-report-form-wireframe.png)
+
+Change Username form:
+
+![Mobile Change Username Wireframe](docs/readme_screenshots/mobile-change-username-wireframe.png)
+
+Change password form:
+
+![Mobile Change Password Wireframe](docs/readme_screenshots/mobile-change-password-wireframe.png)
+
+</details>
+
+[Back to top](#strongest-avenger-react)
