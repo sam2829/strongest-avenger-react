@@ -1,0 +1,10 @@
+.NavBar {
+    background-color: #969696;
+    border: 2px solid #E657ff;
+    font-weight: 700;
+}
+
+.NavBar a {
+    color: black !important;
+  }
+
