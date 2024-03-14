@@ -6,5 +6,9 @@
 
 .NavBar a {
     color: black !important;
+    padding: 6px;
   }
 
+.Active i {
+    color: #E657ff;
+}

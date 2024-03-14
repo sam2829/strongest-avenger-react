@@ -4,6 +4,10 @@
     min-height: 100vh;
     color: black;
 }
+
+.Main {
+    padding-top: 110px;
+}
   
 * {
     box-sizing: border-box;
