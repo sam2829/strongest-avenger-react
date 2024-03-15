@@ -10,6 +10,7 @@ import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import logo from '../../assets/logo.png';
 import axios from "axios";
+import { SetCurrentUserContext } from '../../App';
 
 export class SignInForm extends Component {
 
@@ -42,7 +43,8 @@ export class SignInForm extends Component {
     event.preventDefault();
     const { signInData } = this.state;
     try {
-      await axios.post("/dj-rest-auth/login/", signInData);
+      const {data} = await axios.post("/dj-rest-auth/login/", signInData);
+      this.props.setCurrentUser(data.user);
       this.props.history.push('/');
     } catch (err) {
       this.setState({ errors: err.response?.data });
@@ -131,4 +133,8 @@ export class SignInForm extends Component {
   }
 }
 
-export default withRouter(SignInForm);
+export default withRouter(props => (
+  <SetCurrentUserContext.Consumer>
+    {setCurrentUser => <SignInForm {...props} setCurrentUser={setCurrentUser} />}
+  </SetCurrentUserContext.Consumer>
+));
