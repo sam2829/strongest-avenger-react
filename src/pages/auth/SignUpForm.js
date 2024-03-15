@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import styles from "../../styles/SignUpForm.module.css";
+import styles from "../../styles/SignUpInForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -14,7 +14,7 @@ import { useState } from "react";
 
 const SignUpForm = () => {
 
-  {/* Use state hook for Signup data */}
+  // Use state hook for Signup data
   const [signUpData, setSignUpData] = useState({
     username: "",
     password1: "",
@@ -22,12 +22,12 @@ const SignUpForm = () => {
   });
   const { username, password1, password2 } = signUpData;
 
-  {/* Use state hook for errors */}
+  // Use state hook for errors
   const [errors, setErrors] = useState({});
 
   const history = useHistory();
 
-  {/* Function so input fields display whats being typed */}
+  // Function so input fields display whats being typed
   const handleChange = (event) => {
     setSignUpData({
       ...signUpData,
@@ -35,7 +35,7 @@ const SignUpForm = () => {
     });
   };
 
-  {/* Function to submit sign up form */}
+  // Function to submit sign up form
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
