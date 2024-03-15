@@ -1,6 +1,6 @@
 .NavBar {
     background-color: #969696;
-    border: 2px solid #E657ff;
+    border: 2px solid #8A00C2;
     font-weight: 700;
 }
 
@@ -10,5 +10,5 @@
   }
 
 .Active i {
-    color: #E657ff;
+    color: #8A00C2;
 }
