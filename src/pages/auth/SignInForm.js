@@ -10,7 +10,7 @@ import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import logo from '../../assets/logo.png';
 import axios from "axios";
-import { SetCurrentUserContext } from '../../App';
+import { SetCurrentUserContext } from '../../contexts/CurrentUserContext';
 
 export class SignInForm extends Component {
 
