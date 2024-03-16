@@ -9,8 +9,9 @@ import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
-import Avatar from "./Avatar";
 import axios from "axios";
+import LoggedInIcons from "./LoggedInNavIcons";
+import LoggedOutIcons from "./LoggedOutNavIcons";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -25,44 +26,11 @@ const NavBar = () => {
     }
   };
 
+  // The add posy icon in navbar
   const addPostIcon = (
-    <NavLink
-      className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/posts/create"
-    >
+    <NavLink activeClassName={styles.Active} to="/posts/create">
       <i className="far fa-plus-square"></i>Add post
     </NavLink>
-  );
-  const loggedInIcons = (
-    <>
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/feed"
-      >
-        <i className="fa-solid fa-bars"></i>Feed
-      </NavLink>
-      <NavLink activeClassName={styles.Active} to="/liked">
-        <i className="fa-solid fa-heart"></i>Liked
-      </NavLink>
-      <NavLink to="/" onClick={handleSignOut}>
-        <i className="fa-solid fa-right-from-bracket"></i>Sign out
-      </NavLink>
-      <NavLink to={`/profiles/${currentUser?.profile_id}`}>
-        <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
-      </NavLink>
-    </>
-  );
-  const loggedOutIcons = (
-    <>
-      <NavLink activeClassName={styles.Active} to="/signin">
-        <i className="fas fa-sign-in-alt"></i>Sign in
-      </NavLink>
-      <NavLink to="/signup" activeClassName={styles.Active}>
-        <i className="fas fa-user-plus"></i>Sign up
-      </NavLink>
-    </>
   );
 
   return (
@@ -73,6 +41,11 @@ const NavBar = () => {
             <img src={logo} alt="logo" height="65" />
           </Navbar.Brand>
         </NavLink>
+        <NavLink className="mr-auto" to="/">
+          STRONGEST
+          <br />
+          AVENGER
+        </NavLink>
         {currentUser && addPostIcon}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -81,7 +54,14 @@ const NavBar = () => {
               <i className="fas fa-home"></i>Home
             </NavLink>
 
-            {currentUser ? loggedInIcons : loggedOutIcons}
+            {currentUser ? (
+              <LoggedInIcons
+                currentUser={currentUser}
+                handleSignOut={handleSignOut}
+              />
+            ) : (
+              <LoggedOutIcons />
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
