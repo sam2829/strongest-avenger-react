@@ -33,7 +33,11 @@ const NavBar = () => {
 
   // The add post icon in navbar
   const addPostIcon = (
-    <NavLink activeClassName={styles.Active} to="/posts/create">
+    <NavLink
+      activeClassName={styles.Active}
+      to="/posts/create"
+      className="mr-auto"
+    >
       <i className="far fa-plus-square"></i>Add post
     </NavLink>
   );
@@ -42,16 +46,16 @@ const NavBar = () => {
     <Navbar
       expanded={expanded}
       className={styles.NavBar}
-      expand="md"
+      expand="lg"
       fixed="top"
     >
       <Container>
         <NavLink to="/">
           <Navbar.Brand>
-            <img src={logo} alt="logo" height="65" />
+            <img src={logo} alt="logo" height="58" />
           </Navbar.Brand>
         </NavLink>
-        <NavLink className="mr-auto" to="/">
+        <NavLink className="mr-auto pr-5 d-sm-inline d-none" to="/">
           STRONGEST
           <br />
           AVENGER

@@ -23,7 +23,7 @@ class LoggedInNavIcons extends Component {
           <i className="fa-solid fa-right-from-bracket"></i>Sign out
         </NavLink>
         <NavLink to={`/profiles/${currentUser?.profile_id}`}>
-          <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
+          <Avatar src={currentUser?.profile_image} text="Profile" height={35} />
         </NavLink>
       </>
     );
