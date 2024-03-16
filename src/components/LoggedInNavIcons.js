@@ -4,7 +4,7 @@ import Avatar from "./Avatar";
 import styles from "../styles/NavBar.module.css";
 
 // This is for icons displayed in navbar when user is logged in
-class LoggedInIcons extends Component {
+class LoggedInNavIcons extends Component {
   render() {
     const { currentUser, handleSignOut } = this.props;
     return (
@@ -30,4 +30,4 @@ class LoggedInIcons extends Component {
   }
 }
 
-export default LoggedInIcons;
+export default LoggedInNavIcons;

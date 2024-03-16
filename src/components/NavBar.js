@@ -10,8 +10,8 @@ import {
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
 import axios from "axios";
-import LoggedInIcons from "./LoggedInNavIcons";
-import LoggedOutIcons from "./LoggedOutNavIcons";
+import LoggedInNavIcons from "./LoggedInNavIcons";
+import LoggedOutNavIcons from "./LoggedOutNavIcons";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -22,11 +22,11 @@ const NavBar = () => {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
     } catch (err) {
-      console.log(err);
+      console.log("Sign out failed:", err);
     }
   };
 
-  // The add posy icon in navbar
+  // The add post icon in navbar
   const addPostIcon = (
     <NavLink activeClassName={styles.Active} to="/posts/create">
       <i className="far fa-plus-square"></i>Add post
@@ -55,12 +55,12 @@ const NavBar = () => {
             </NavLink>
 
             {currentUser ? (
-              <LoggedInIcons
+              <LoggedInNavIcons
                 currentUser={currentUser}
                 handleSignOut={handleSignOut}
               />
             ) : (
-              <LoggedOutIcons />
+              <LoggedOutNavIcons />
             )}
           </Nav>
         </Navbar.Collapse>

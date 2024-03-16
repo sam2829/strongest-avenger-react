@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import styles from "../styles/NavBar.module.css";
 
 // This is for icons displayed in navbar when user is logged out
-class LoggedOutIcons extends Component {
+class LoggedOutNavIcons extends Component {
   render() {
     return (
       <>
@@ -18,4 +18,4 @@ class LoggedOutIcons extends Component {
   }
 }
 
-export default LoggedOutIcons;
+export default LoggedOutNavIcons;
