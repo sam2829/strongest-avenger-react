@@ -16,3 +16,8 @@
   max-width: 100%;
   object-fit: contain;
 }
+
+.RadioButtons {
+  color: #8a00c2;
+  margin: 5px 0 10px 0;
+}

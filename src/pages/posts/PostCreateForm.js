@@ -27,9 +27,17 @@ const PostCreateForm = () => {
     content: "",
     image: "",
     video: "",
+    mediaType: "Image",
   });
-  const { title, characterName, characterCategory, content, image, video } =
-    postData;
+  const {
+    title,
+    characterName,
+    characterCategory,
+    content,
+    image,
+    video,
+    mediaType,
+  } = postData;
 
   // Handle form fields changing
   const handleChange = (event) => {
@@ -90,6 +98,34 @@ const PostCreateForm = () => {
                   accept="image/*"
                   onChange={handleChangeImage}
                 />
+                <Form.Label className={`${styles.FormFields} mt-3`}>
+                  Select if posting image or video:
+                </Form.Label>
+                <Row>
+                  <Col md={{ span: 2, offset: 3 }}>
+                    <Form.Check
+                      type="radio"
+                      label="Image"
+                      name="mediaType"
+                      value="Image"
+                      checked={mediaType === "Image"}
+                      onChange={handleChange}
+                      className={styles.RadioButtons}
+                    />
+                  </Col>
+
+                  <Col md={{ span: 2, offset: 2 }}>
+                    <Form.Check
+                      type="radio"
+                      label="Video"
+                      name="mediaType"
+                      value="Video"
+                      checked={mediaType === "Video"}
+                      onChange={handleChange}
+                      className={styles.RadioButtons}
+                    />
+                  </Col>
+                </Row>
               </Form.Group>
             </Container>
 
