@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -58,6 +57,17 @@ const PostCreateForm = () => {
     }
   };
 
+  // Handle change in video field
+  const handleChangeVideo = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(video);
+      setPostData({
+        ...postData,
+        video: URL.createObjectURL(event.target.files[0]),
+      });
+    }
+  };
+
   return (
     <Form>
       <Container className={appStyles.Content}>
@@ -65,39 +75,93 @@ const PostCreateForm = () => {
           <Col md={{ span: 10, offset: 1 }}>
             <Container className="d-flex flex-column justify-content-center">
               <Form.Group className="text-center">
-                {image ? (
+                {/* Rendered if image upload is selected */}
+                {postData.mediaType === "Image" && (
                   <>
-                    <figure>
-                      <Image className={styles.Image} src={image} rounded />
-                    </figure>
-
-                    <div>
+                    {image ? (
+                      <>
+                        <figure>
+                          <Image className={styles.Media} src={image} rounded />
+                        </figure>
+                        <div>
+                          <Form.Label
+                            className={btnStyles.Button}
+                            htmlFor="image-upload"
+                          >
+                            Change the image
+                          </Form.Label>
+                        </div>
+                      </>
+                    ) : (
                       <Form.Label
-                        className={btnStyles.Button}
+                        className="d-flex justify-content-center"
                         htmlFor="image-upload"
                       >
-                        Change the image
+                        <Asset
+                          src={Upload}
+                          message="Click or tap to upload an image"
+                        />
                       </Form.Label>
-                    </div>
-                  </>
-                ) : (
-                  <Form.Label
-                    className="d-flex justify-content-center"
-                    htmlFor="image-upload"
-                  >
-                    <Asset
-                      src={Upload}
-                      message="Click or tap to upload an image"
+                    )}
+                    <Form.File
+                      id="image-upload"
+                      className={styles.ChooseFile}
+                      accept="image/*"
+                      onChange={handleChangeImage}
                     />
-                  </Form.Label>
+                  </>
                 )}
 
-                <Form.File
-                  id="image-upload"
-                  className={styles.ChooseFile}
-                  accept="image/*"
-                  onChange={handleChangeImage}
-                />
+                {/* Rendered if video upload is selected */}
+                {postData.mediaType === "Video" && (
+                  <>
+                    {video ? (
+                      <>
+                        <figure>
+                          <div className={styles.VideoContainer}>
+                            <video
+                              src={video}
+                              className={styles.Media}
+                              controls
+                            >
+                              Your browser does not support the video tag.
+                            </video>
+                            <div
+                              className={styles.PlayButton}
+                              onClick={() =>
+                                document.getElementById("video").play()
+                              }
+                            ></div>
+                          </div>
+                        </figure>
+                        <div>
+                          <Form.Label
+                            className={btnStyles.Button}
+                            htmlFor="video-upload"
+                          >
+                            Change the video
+                          </Form.Label>
+                        </div>
+                      </>
+                    ) : (
+                      <Form.Label
+                        className="d-flex justify-content-center"
+                        htmlFor="video-upload"
+                      >
+                        <Asset
+                          src={Upload}
+                          message="Click or tap to upload a video"
+                        />
+                      </Form.Label>
+                    )}
+                    <Form.File
+                      id="video-upload"
+                      className={styles.ChooseFile}
+                      accept="video/*"
+                      onChange={handleChangeVideo}
+                    />
+                  </>
+                )}
                 <Form.Label className={`${styles.FormFields} mt-3`}>
                   Select if posting image or video:
                 </Form.Label>
