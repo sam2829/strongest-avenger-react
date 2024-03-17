@@ -39,6 +39,17 @@ const PostCreateForm = () => {
     });
   };
 
+  // Handle change in image field
+  const handleChangeImage = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(image);
+      setPostData({
+        ...postData,
+        image: URL.createObjectURL(event.target.files[0]),
+      });
+    }
+  };
+
   return (
     <Form>
       <Container className={appStyles.Content}>
@@ -49,11 +60,12 @@ const PostCreateForm = () => {
                 {image ? (
                   <>
                     <figure>
-                      <Image className={appStyles.Image} src={image} rounded />
+                      <Image className={styles.Image} src={image} rounded />
                     </figure>
+
                     <div>
                       <Form.Label
-                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                        className={btnStyles.Button}
                         htmlFor="image-upload"
                       >
                         Change the image
@@ -74,11 +86,13 @@ const PostCreateForm = () => {
 
                 <Form.File
                   id="image-upload"
+                  className={styles.ChooseFile}
                   accept="image/*"
-                  //   onChange={handleChangeImage}
+                  onChange={handleChangeImage}
                 />
               </Form.Group>
             </Container>
+
             <Container className={styles.FormFields}>
               <PostCreateFormTextFields
                 title={title}
