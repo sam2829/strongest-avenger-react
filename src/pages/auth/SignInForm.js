@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import styles from "../../styles/SignUpInForm.module.css";
+import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -60,7 +61,7 @@ export class SignInForm extends Component {
     const { username, password } = signInData;
 
     return (
-      <Container className={styles.Content}>
+      <Container className={appStyles.Content}>
         <Row className={`${styles.Row} justify-content-center`}>
           <Col md={{ span: 6 }}>
             <Container>

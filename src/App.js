@@ -7,6 +7,7 @@ import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
 import AlertMessage, { useAlert } from "./components/AlertMessage";
 import React from "react";
+import PostCreateForm from "./pages/posts/PostCreateForm";
 
 function App() {
   const { alert, showAlert, hideAlert } = useAlert();
@@ -30,6 +31,7 @@ function App() {
             render={() => <SignInForm showAlert={showAlert} />}
           />
           <Route exact path="/signup" render={() => <SignUpForm />} />
+          <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>

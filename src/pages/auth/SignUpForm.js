@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignUpInForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import appStyles from "../../App.module.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -47,7 +48,7 @@ const SignUpForm = () => {
   };
 
   return (
-    <Container className={styles.Content}>
+    <Container className={appStyles.Content}>
       <Row className={`${styles.Row} justify-content-center`}>
         <Col md={{ span: 6 }}>
           <Container>
