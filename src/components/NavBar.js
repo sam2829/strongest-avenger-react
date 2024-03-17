@@ -14,7 +14,7 @@ import LoggedInNavIcons from "./LoggedInNavIcons";
 import LoggedOutNavIcons from "./LoggedOutNavIcons";
 import UseClickOutsideToggle from "../hooks/UseClickOutsideToggle";
 
-const NavBar = () => {
+const NavBar = ({ showAlert }) => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
@@ -25,6 +25,7 @@ const NavBar = () => {
   const handleSignOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
+      showAlert("success", "You have successfully signed out!");
       setCurrentUser(null);
     } catch (err) {
       console.log("Sign out failed:", err);

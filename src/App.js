@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <NavBar />
+      <NavBar showAlert={showAlert} />
       {alert && (
         <AlertMessage
           variant={alert.variant}
