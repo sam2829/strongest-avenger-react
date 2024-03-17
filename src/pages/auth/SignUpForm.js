@@ -8,12 +8,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-import logo from '../../assets/logo.png';
+import logo from "../../assets/logo.png";
 import axios from "axios";
 import { useState } from "react";
 
 const SignUpForm = () => {
-
   // Use state hook for Signup data
   const [signUpData, setSignUpData] = useState({
     username: "",
@@ -54,7 +53,7 @@ const SignUpForm = () => {
           <Container>
             <Row className="text-center">
               <Col xs="2">
-                <img src={logo} alt='logo' height='40'/>
+                <img src={logo} alt="logo" height="40" />
               </Col>
               <Col xs="8">
                 <h1 className={styles.Heading}>Sign up</h1>

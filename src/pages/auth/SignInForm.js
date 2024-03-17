@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import styles from "../../styles/SignUpInForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -8,15 +8,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-import logo from '../../assets/logo.png';
+import logo from "../../assets/logo.png";
 import axios from "axios";
-import { SetCurrentUserContext } from '../../contexts/CurrentUserContext';
+import { SetCurrentUserContext } from "../../contexts/CurrentUserContext";
 
 export class SignInForm extends Component {
-
   constructor(props) {
-    super(props)
-  
+    super(props);
+
     // set the original states
     this.state = {
       signInData: {
@@ -43,9 +42,14 @@ export class SignInForm extends Component {
     event.preventDefault();
     const { signInData } = this.state;
     try {
-      const {data} = await axios.post("/dj-rest-auth/login/", signInData);
+      const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       this.props.setCurrentUser(data.user);
-      this.props.history.push('/');
+      const { username } = signInData;
+      this.props.showAlert(
+        "success",
+        `You have successfully signed in as ${username}!`
+      );
+      this.props.history.push("/");
     } catch (err) {
       this.setState({ errors: err.response?.data });
     }
@@ -62,7 +66,7 @@ export class SignInForm extends Component {
             <Container>
               <Row className="text-center">
                 <Col xs="2">
-                  <img src={logo} alt='logo' height='40'/>
+                  <img src={logo} alt="logo" height="40" />
                 </Col>
                 <Col xs="8">
                   <h1 className={styles.Heading}>Sign in</h1>
@@ -129,12 +133,14 @@ export class SignInForm extends Component {
           </Col>
         </Row>
       </Container>
-    )
+    );
   }
 }
 
-export default withRouter(props => (
+export default withRouter((props) => (
   <SetCurrentUserContext.Consumer>
-    {setCurrentUser => <SignInForm {...props} setCurrentUser={setCurrentUser} />}
+    {(setCurrentUser) => (
+      <SignInForm {...props} setCurrentUser={setCurrentUser} />
+    )}
   </SetCurrentUserContext.Consumer>
 ));

@@ -1,0 +1,11 @@
+.Alert {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  background-color: #ffac00;
+  text-align: center;
+  opacity: 0.8;
+  z-index: 9999;
+}
