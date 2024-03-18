@@ -40,10 +40,21 @@ const PostCreateForm = () => {
 
   // Handle form fields changing
   const handleChange = (event) => {
-    setPostData({
-      ...postData,
-      [event.target.name]: event.target.value,
-    });
+    const { name, value } = event.target;
+    // Clear the other media type when switching between image and video
+    if (name === "mediaType") {
+      setPostData({
+        ...postData,
+        [name]: value,
+        image: value === "Video" ? "" : image, // Clear image if switching to video
+        video: value === "Image" ? "" : video, // Clear video if switching to image
+      });
+    } else {
+      setPostData({
+        ...postData,
+        [name]: value,
+      });
+    }
   };
 
   // Handle change in image field
