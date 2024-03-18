@@ -19,6 +19,7 @@ function App() {
         <AlertMessage
           variant={alert.variant}
           message={alert.message}
+          showAlert={showAlert}
           onClose={hideAlert}
         />
       )}

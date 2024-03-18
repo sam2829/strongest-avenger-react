@@ -2,24 +2,28 @@ import React, { useState, useEffect } from "react";
 import Alert from "react-bootstrap/Alert";
 import styles from "../styles/AlertMessage.module.css";
 
-const AlertMessage = ({ variant, message }) => {
+const AlertMessage = ({ variant, message, showAlert }) => {
   const [show, setShow] = useState(true);
 
   const handleClose = () => {
     setShow(false);
   };
 
-  // Will close alert message after 3 seconds
-  // and only run once when opponent mounts
+  // this will run only when showAlert has been called
+  // and if true shows alert then closes after
+  // three seconds
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShow(false);
-    }, 3000);
+    if (showAlert) {
+      setShow(true);
+      const timer = setTimeout(() => {
+        setShow(false);
+      }, 3000);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [showAlert]);
 
   return (
     <>
