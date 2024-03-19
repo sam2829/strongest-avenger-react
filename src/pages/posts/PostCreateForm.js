@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Alert from "react-bootstrap/Alert";
 
 import Upload from "../../assets/upload.png";
 
@@ -13,6 +14,9 @@ import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
 import { Image } from "react-bootstrap";
 import PostCreateFormTextFields from "./PostCreateFormTextFields";
+
+import { useHistory } from "react-router";
+import { axiosReq } from "../../api/axiosDefaults";
 
 const PostCreateForm = () => {
   // handle errors on the post form
@@ -38,6 +42,10 @@ const PostCreateForm = () => {
     mediaType,
   } = postData;
 
+  const imageInput = useRef(null);
+  const videoInput = useRef(null);
+  const history = useHistory();
+
   // Handle form fields changing
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -45,14 +53,14 @@ const PostCreateForm = () => {
     if (name === "mediaType") {
       setPostData({
         ...postData,
-        [name]: value,
+        [event.target.name]: event.target.value,
         image: value === "Video" ? "" : image, // Clear image if switching to video
         video: value === "Image" ? "" : video, // Clear video if switching to image
       });
     } else {
       setPostData({
         ...postData,
-        [name]: value,
+        [event.target.name]: event.target.value,
       });
     }
   };
@@ -79,11 +87,53 @@ const PostCreateForm = () => {
     }
   };
 
+  // Handle create post submission
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+
+    formData.append("title", title);
+    formData.append("character_name", characterName);
+    formData.append("character_category", characterCategory);
+    formData.append("content", content);
+    console.log("after text field apend:", formData);
+    // Check if mediaType is Image or Video and append the corresponding file
+    if (mediaType === "Image") {
+      formData.append("image", imageInput.current.files[0]);
+    } else if (mediaType === "Video") {
+      formData.append("video", videoInput.current.files[0]);
+    }
+    console.log("after image and video apend:", formData);
+
+    try {
+      console.log("FormData contents:", Object.fromEntries(formData));
+      console.log("try to submit");
+      console.log(formData);
+      const { data } = await axiosReq.post("/posts/", formData);
+      console.log("after post", formData);
+      history.push(`/posts/${data.id}`);
+      console.log("after push", formData);
+    } catch (err) {
+      if (err.response && err.response.data) {
+        // Display the error message received from the server
+        console.log("Server Error:", err.response.data);
+        setErrors(err.response.data);
+      } else {
+        console.log("Network Error:", err.message);
+      }
+    }
+  };
+
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Container className={appStyles.Content}>
         <Row className="p-4 justify content center">
           <Col md={{ span: 10, offset: 1 }}>
+            {errors && (
+              <Alert variant="danger">
+                {Object.values(errors).flat().join(", ")}
+              </Alert>
+            )}
             <Container className="d-flex flex-column justify-content-center">
               <Form.Group className="text-center">
                 {/* Rendered if image upload is selected */}
@@ -119,9 +169,15 @@ const PostCreateForm = () => {
                       className={styles.ChooseFile}
                       accept="image/*"
                       onChange={handleChangeImage}
+                      ref={imageInput}
                     />
                   </>
                 )}
+                {errors?.image?.map((message, idx) => (
+                  <Alert variant="warning" key={idx}>
+                    {message}
+                  </Alert>
+                ))}
 
                 {/* Rendered if video upload is selected */}
                 {postData.mediaType === "Video" && (
@@ -170,6 +226,7 @@ const PostCreateForm = () => {
                       className={styles.ChooseFile}
                       accept="video/*"
                       onChange={handleChangeVideo}
+                      ref={videoInput}
                     />
                   </>
                 )}

@@ -12,7 +12,7 @@ const TextFields = ({
   content,
   handleChange,
 }) => {
-  const history = useHistory(); // Obtain history object using useHistory hook
+  const history = useHistory();
 
   return (
     <>
@@ -23,6 +23,7 @@ const TextFields = ({
           name="title"
           value={title}
           onChange={handleChange}
+          required
         />
       </Form.Group>
       <Form.Group>
@@ -32,6 +33,7 @@ const TextFields = ({
           name="characterName"
           value={characterName}
           onChange={handleChange}
+          required
         />
       </Form.Group>
       <Form.Group>
@@ -41,6 +43,7 @@ const TextFields = ({
           name="characterCategory"
           value={characterCategory}
           onChange={handleChange}
+          required
         >
           <option value="Avenger">Avenger</option>
           <option value="X-Men">X-Men</option>
@@ -55,6 +58,7 @@ const TextFields = ({
           name="content"
           value={content}
           onChange={handleChange}
+          required
         />
       </Form.Group>
 
@@ -66,7 +70,7 @@ const TextFields = ({
       </Button>
       <Button
         className={`${btnStyles.Button} ${styles.PostButton}`}
-        onClick={() => history.goBack()} // Use history.goBack()
+        onClick={() => history.goBack()}
       >
         cancel
       </Button>
