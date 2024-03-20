@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import styles from "../../styles/PostCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import Alert from "react-bootstrap/Alert";
 import { useHistory } from "react-router";
 
 const TextFields = ({
@@ -11,7 +12,9 @@ const TextFields = ({
   characterCategory,
   content,
   handleChange,
+  errors,
 }) => {
+  console.log("Errors in TextFields component:", errors);
   const history = useHistory();
 
   return (
@@ -23,9 +26,13 @@ const TextFields = ({
           name="title"
           value={title}
           onChange={handleChange}
-          required
         />
       </Form.Group>
+      {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Character name</Form.Label>
         <Form.Control
@@ -33,9 +40,13 @@ const TextFields = ({
           name="characterName"
           value={characterName}
           onChange={handleChange}
-          required
         />
       </Form.Group>
+      {errors?.character_name?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Character category</Form.Label>
         <Form.Control
@@ -43,7 +54,6 @@ const TextFields = ({
           name="characterCategory"
           value={characterCategory}
           onChange={handleChange}
-          required
         >
           <option value="Avenger">Avenger</option>
           <option value="X-Men">X-Men</option>
@@ -51,6 +61,11 @@ const TextFields = ({
           <option value="Villain">Villain</option>
         </Form.Control>
       </Form.Group>
+      {errors?.character_category?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Content</Form.Label>
         <Form.Control
@@ -58,10 +73,13 @@ const TextFields = ({
           name="content"
           value={content}
           onChange={handleChange}
-          required
         />
       </Form.Group>
-
+      {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Button
         className={`${btnStyles.Button} ${styles.PostButton}`}
         type="submit"
