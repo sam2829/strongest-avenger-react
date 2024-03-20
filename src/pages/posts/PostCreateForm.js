@@ -17,6 +17,8 @@ import PostCreateFormTextFields from "./PostCreateFormTextFields";
 
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import PostCreateFormImageField from "./PostCreateFormImageField";
+import PostCreateFormVideoField from "./PostCreateFormVideoField";
 
 const PostCreateForm = ({ showAlert }) => {
   // handle errors on the post form
@@ -131,103 +133,22 @@ const PostCreateForm = ({ showAlert }) => {
               <Form.Group className="text-center">
                 {/* Rendered if image upload is selected */}
                 {postData.mediaType === "Image" && (
-                  <>
-                    {image ? (
-                      <>
-                        <figure>
-                          <Image className={styles.Media} src={image} rounded />
-                        </figure>
-                        <div>
-                          <Form.Label
-                            className={btnStyles.Button}
-                            htmlFor="image-upload"
-                          >
-                            Change the image
-                          </Form.Label>
-                        </div>
-                      </>
-                    ) : (
-                      <Form.Label
-                        className="d-flex justify-content-center"
-                        htmlFor="image-upload"
-                      >
-                        <Asset
-                          src={Upload}
-                          message="Click or tap to upload an image"
-                        />
-                      </Form.Label>
-                    )}
-                    <Form.File
-                      id="image-upload"
-                      className={styles.ChooseFile}
-                      accept="image/*"
-                      onChange={handleChangeImage}
-                      ref={imageInput}
-                    />
-                  </>
+                  <PostCreateFormImageField
+                    image={image}
+                    handleChangeImage={handleChangeImage}
+                    errors={errors}
+                    imageInput={imageInput}
+                  />
                 )}
-                {errors?.image?.map((message, idx) => (
-                  <Alert variant="warning" key={idx}>
-                    {message}
-                  </Alert>
-                ))}
-
                 {/* Rendered if video upload is selected */}
                 {postData.mediaType === "Video" && (
-                  <>
-                    {video ? (
-                      <>
-                        <figure>
-                          <div className={styles.VideoContainer}>
-                            <video
-                              src={video}
-                              className={styles.Media}
-                              controls
-                            >
-                              Your browser does not support the video tag.
-                            </video>
-                            <div
-                              className={styles.PlayButton}
-                              onClick={() =>
-                                document.getElementById("video").play()
-                              }
-                            ></div>
-                          </div>
-                        </figure>
-                        <div>
-                          <Form.Label
-                            className={btnStyles.Button}
-                            htmlFor="video-upload"
-                          >
-                            Change the video
-                          </Form.Label>
-                        </div>
-                      </>
-                    ) : (
-                      <Form.Label
-                        className="d-flex justify-content-center"
-                        htmlFor="video-upload"
-                      >
-                        <Asset
-                          src={Upload}
-                          message="Click or tap to upload a video"
-                        />
-                      </Form.Label>
-                    )}
-                    <Form.File
-                      id="video-upload"
-                      className={styles.ChooseFile}
-                      accept="video/*"
-                      onChange={handleChangeVideo}
-                      ref={videoInput}
-                    />
-                  </>
+                  <PostCreateFormVideoField
+                    video={video}
+                    handleChangeVideo={handleChangeVideo}
+                    errors={errors}
+                    videoInput={videoInput}
+                  />
                 )}
-                {errors?.video?.map((message, idx) => (
-                  <Alert variant="warning" key={idx}>
-                    {message}
-                  </Alert>
-                ))}
                 <Form.Label className={`${styles.FormFields} mt-3`}>
                   Select if posting image or video:
                 </Form.Label>
