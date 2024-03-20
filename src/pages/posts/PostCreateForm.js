@@ -4,21 +4,18 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Alert from "react-bootstrap/Alert";
-
-import Upload from "../../assets/upload.png";
 
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
-import btnStyles from "../../styles/Button.module.css";
+
 import Asset from "../../components/Asset";
-import { Image } from "react-bootstrap";
 import PostCreateFormTextFields from "./PostCreateFormTextFields";
 
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import PostCreateFormImageField from "./PostCreateFormImageField";
 import PostCreateFormVideoField from "./PostCreateFormVideoField";
+import PostCreateFormRadioButtons from "./PostCreateFormRadioButtons";
 
 const PostCreateForm = ({ showAlert }) => {
   // handle errors on the post form
@@ -128,34 +125,10 @@ const PostCreateForm = ({ showAlert }) => {
                     setPostData={setPostData}
                   />
                 )}
-                <Form.Label className={`${styles.FormFields} mt-3`}>
-                  Select if posting image or video:
-                </Form.Label>
-                <Row>
-                  <Col md={{ span: 2, offset: 3 }}>
-                    <Form.Check
-                      type="radio"
-                      label="Image"
-                      name="mediaType"
-                      value="Image"
-                      checked={mediaType === "Image"}
-                      onChange={handleChange}
-                      className={styles.RadioButtons}
-                    />
-                  </Col>
-
-                  <Col md={{ span: 2, offset: 2 }}>
-                    <Form.Check
-                      type="radio"
-                      label="Video"
-                      name="mediaType"
-                      value="Video"
-                      checked={mediaType === "Video"}
-                      onChange={handleChange}
-                      className={styles.RadioButtons}
-                    />
-                  </Col>
-                </Row>
+                <PostCreateFormRadioButtons
+                  mediaType={mediaType}
+                  handleChange={handleChange}
+                />
               </Form.Group>
             </Container>
 
