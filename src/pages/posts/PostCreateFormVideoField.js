@@ -8,10 +8,22 @@ import btnStyles from "../../styles/Button.module.css";
 
 const PostCreateFormVideoField = ({
   video,
-  handleChangeVideo,
+  postData,
+  setPostData,
   errors,
   videoInput,
 }) => {
+  // Handle change in video field
+  const handleChangeVideo = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(video);
+      setPostData({
+        ...postData,
+        video: URL.createObjectURL(event.target.files[0]),
+      });
+    }
+  };
+
   return (
     <>
       {video ? (

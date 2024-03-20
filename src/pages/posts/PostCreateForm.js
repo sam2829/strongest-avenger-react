@@ -69,28 +69,6 @@ const PostCreateForm = ({ showAlert }) => {
     }
   };
 
-  // Handle change in image field
-  const handleChangeImage = (event) => {
-    if (event.target.files.length) {
-      URL.revokeObjectURL(image);
-      setPostData({
-        ...postData,
-        image: URL.createObjectURL(event.target.files[0]),
-      });
-    }
-  };
-
-  // Handle change in video field
-  const handleChangeVideo = (event) => {
-    if (event.target.files.length) {
-      URL.revokeObjectURL(video);
-      setPostData({
-        ...postData,
-        video: URL.createObjectURL(event.target.files[0]),
-      });
-    }
-  };
-
   // Handle create post submission
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -109,7 +87,6 @@ const PostCreateForm = ({ showAlert }) => {
     }
 
     try {
-      console.log("FormData contents:", Object.fromEntries(formData));
       const { data } = await axiosReq.post("/posts/", formData);
       showAlert("success", `You have successfully created a post`);
       history.push(`/posts/${data.id}`);
@@ -135,18 +112,20 @@ const PostCreateForm = ({ showAlert }) => {
                 {postData.mediaType === "Image" && (
                   <PostCreateFormImageField
                     image={image}
-                    handleChangeImage={handleChangeImage}
                     errors={errors}
                     imageInput={imageInput}
+                    postData={postData}
+                    setPostData={setPostData}
                   />
                 )}
                 {/* Rendered if video upload is selected */}
                 {postData.mediaType === "Video" && (
                   <PostCreateFormVideoField
                     video={video}
-                    handleChangeVideo={handleChangeVideo}
                     errors={errors}
                     videoInput={videoInput}
+                    postData={postData}
+                    setPostData={setPostData}
                   />
                 )}
                 <Form.Label className={`${styles.FormFields} mt-3`}>
