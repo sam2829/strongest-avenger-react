@@ -32,7 +32,11 @@ function App() {
             render={() => <SignInForm showAlert={showAlert} />}
           />
           <Route exact path="/signup" render={() => <SignUpForm />} />
-          <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+          <Route
+            exact
+            path="/posts/create"
+            render={() => <PostCreateForm showAlert={showAlert} />}
+          />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>

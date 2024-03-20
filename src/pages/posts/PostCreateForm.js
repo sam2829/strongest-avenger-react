@@ -18,7 +18,7 @@ import PostCreateFormTextFields from "./PostCreateFormTextFields";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
-const PostCreateForm = () => {
+const PostCreateForm = ({ showAlert }) => {
   // handle errors on the post form
   const [errors, setErrors] = useState({});
 
@@ -109,6 +109,7 @@ const PostCreateForm = () => {
     try {
       console.log("FormData contents:", Object.fromEntries(formData));
       const { data } = await axiosReq.post("/posts/", formData);
+      showAlert("success", `You have successfully created a post`);
       history.push(`/posts/${data.id}`);
     } catch (err) {
       if (err.response && err.response.data) {
