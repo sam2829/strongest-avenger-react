@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 import appStyles from "../../App.module.css";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import Post from "./Post";
 
 const PostPage = () => {
   const { id } = useParams();
@@ -36,7 +37,7 @@ const PostPage = () => {
         <Col lg={{ span: 6, offset: 1 }}>
           <p>Popular for mobiles</p>
           <p>Search by mobiles</p>
-          <p>Posts</p>
+          <Post {...post.results[0]} setPosts={setPost} postPage />
         </Col>
         <Col lg={{ span: 2, offset: 1 }} className="d-none d-lg-block">
           <p>Popular for desktop</p>
