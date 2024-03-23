@@ -23,6 +23,7 @@ const Post = (props) => {
     updated_at,
     video,
     postPage,
+    setPosts,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -67,10 +68,12 @@ const Post = (props) => {
         <div className={styles.PostIcons}>
           <div className={styles.IconContainer}>
             <PostLikeIcon
+              id={id}
               is_owner={is_owner}
               like_id={like_id}
               likes_count={likes_count}
               currentUser={currentUser}
+              setPosts={setPosts}
             />
           </div>
           <div className={styles.IconContainer}>
