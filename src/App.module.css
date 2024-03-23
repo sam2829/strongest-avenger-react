@@ -42,3 +42,18 @@ i:hover {
   transition: color ease-in-out 0.3s;
   color: #8a00c2;
 }
+
+/* Scroll bar styles */
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+*::-webkit-scrollbar-thumb {
+  background: #969696;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #ffac00;
+}

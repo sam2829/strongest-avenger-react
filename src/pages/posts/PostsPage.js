@@ -10,6 +10,8 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useLocation } from "react-router";
 import Post from "./Post";
 import Asset from "../../components/Asset";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 const PostsPage = ({ message, filter = "" }) => {
   const [posts, setPosts] = useState({ results: [] });
@@ -81,7 +83,13 @@ const PostsPage = ({ message, filter = "" }) => {
               placeholder="Search posts"
             />
           </Form>
-          {postsContent}
+          <InfiniteScroll
+            children={postsContent}
+            loader={<Asset spinner />}
+            dataLength={posts.results.length}
+            hasMore={!!posts.next}
+            next={() => fetchMoreData(posts, setPosts)}
+          />
         </Col>
         <Col lg={{ span: 2, offset: 1 }} className="d-none d-lg-block">
           <p>Popular for desktop</p>
