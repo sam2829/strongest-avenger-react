@@ -30,7 +30,7 @@ const Post = (props) => {
   const is_owner = currentUser?.username === owner;
 
   return (
-    <Card>
+    <Card className={styles.PostContainer}>
       <Card.Body className={styles.PostBody}>
         <Media className="align-items-center justify-content-between">
           <Link to={`/profiles/${profile_id}`}>

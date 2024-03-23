@@ -9,9 +9,14 @@ import AlertMessage, { useAlert } from "./components/AlertMessage";
 import React from "react";
 import PostCreateForm from "./pages/posts/PostCreateForm";
 import PostPage from "./pages/posts/PostPage";
+import { useCurrentUser } from "./contexts/CurrentUserContext";
+import PostsPage from "./pages/posts/PostsPage";
 
 function App() {
   const { alert, showAlert, hideAlert } = useAlert();
+
+  const currentUser = useCurrentUser();
+  const profile_id = currentUser?.profile_id || "";
 
   return (
     <div className={styles.App}>
@@ -26,7 +31,33 @@ function App() {
       )}
       <Container className={styles.Main}>
         <Switch>
-          <Route exact path="/" render={() => <h1>Home page</h1>} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <PostsPage message="No results found. Please adjust your search." />
+            )}
+          />
+          <Route
+            exact
+            path="/feed"
+            render={() => (
+              <PostsPage
+                message="No results found. Please adjust your search or follow a user."
+                filter={`owner__followed__owner__profile=${profile_id}&`}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/liked"
+            render={() => (
+              <PostsPage
+                message="No results found. Please adjust your search or like a post."
+                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+              />
+            )}
+          />
           <Route
             exact
             path="/signin"
