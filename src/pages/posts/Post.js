@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Card, Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
+import PostLikeIcon from "./PostLikeIcon";
 
 const Post = (props) => {
   const {
@@ -51,7 +52,7 @@ const Post = (props) => {
         {image && !video && (
           <Card.Img src={image} alt={title} className={styles.PostMedia} />
         )}
-        {/* if the post contains a video the videoa will be displayed */}
+        {/* if the post contains a video the video will be displayed */}
         {!image && video && (
           <Card.Body className="p-0">
             <video src={video} className={styles.PostMedia} controls>
@@ -65,30 +66,12 @@ const Post = (props) => {
         <Card.Text className="text-center py-2">{content}</Card.Text>
         <div className={styles.PostIcons}>
           <div className={styles.IconContainer}>
-            {is_owner ? (
-              <OverlayTrigger
-                placement="top"
-                overlay={<Tooltip>You can't like your own post!</Tooltip>}
-              >
-                <i className="far fa-heart" />
-              </OverlayTrigger>
-            ) : like_id ? (
-              <span onClick={() => {}}>
-                <i className={`fas fa-heart ${styles.Heart}`} />
-              </span>
-            ) : currentUser ? (
-              <span onClick={() => {}}>
-                <i className={`far fa-heart ${styles.HeartOutline}`} />
-              </span>
-            ) : (
-              <OverlayTrigger
-                placement="top"
-                overlay={<Tooltip>Log in to like posts!</Tooltip>}
-              >
-                <i className="far fa-heart" />
-              </OverlayTrigger>
-            )}
-            {likes_count}
+            <PostLikeIcon
+              is_owner={is_owner}
+              like_id={like_id}
+              likes_count={likes_count}
+              currentUser={currentUser}
+            />
           </div>
           <div className={styles.IconContainer}>
             <Link to={`/posts/${id}`}>
