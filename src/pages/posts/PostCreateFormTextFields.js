@@ -1,10 +1,6 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import styles from "../../styles/PostCreateEditForm.module.css";
-import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
-import { useHistory } from "react-router";
 
 const TextFields = ({
   title,
@@ -14,9 +10,6 @@ const TextFields = ({
   handleChange,
   errors,
 }) => {
-  console.log("Errors in TextFields component:", errors);
-  const history = useHistory();
-
   return (
     <>
       <Form.Group>
@@ -80,18 +73,6 @@ const TextFields = ({
           {message}
         </Alert>
       ))}
-      <Button
-        className={`${btnStyles.Button} ${styles.PostButton}`}
-        type="submit"
-      >
-        create
-      </Button>
-      <Button
-        className={`${btnStyles.Button} ${styles.PostButton}`}
-        onClick={() => history.goBack()}
-      >
-        cancel
-      </Button>
     </>
   );
 };

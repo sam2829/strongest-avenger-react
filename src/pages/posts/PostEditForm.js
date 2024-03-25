@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
@@ -12,13 +12,13 @@ import btnStyles from "../../styles/Button.module.css";
 
 import PostCreateFormTextFields from "./PostCreateFormTextFields";
 
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import PostCreateFormImageField from "./PostCreateFormImageField";
 import PostCreateFormVideoField from "./PostCreateFormVideoField";
 import PostCreateFormRadioButtons from "./PostCreateFormRadioButtons";
 
-const PostCreateForm = ({ showAlert }) => {
+const PostEditForm = ({ showAlert }) => {
   // handle errors on the post form
   const [errors, setErrors] = useState({});
 
@@ -45,6 +45,46 @@ const PostCreateForm = ({ showAlert }) => {
   const imageInput = useRef(null);
   const videoInput = useRef(null);
   const history = useHistory();
+  const { id } = useParams();
+
+  // on load retrieve existing post data
+  useEffect(() => {
+    const handleMount = async () => {
+      try {
+        const { data } = await axiosReq.get(`/posts/${id}/`);
+        const {
+          title,
+          character_name: characterName,
+          character_category: characterCategory,
+          content,
+          image,
+          video,
+          is_owner,
+        } = data;
+
+        // Set media type to match what the post being retrieved
+        if (is_owner) {
+          const newMediaType = image ? "Image" : video ? "Video" : "Image";
+
+          setPostData({
+            title,
+            characterName,
+            characterCategory,
+            content,
+            image,
+            video,
+            mediaType: newMediaType,
+          });
+        } else {
+          history.push("/");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    handleMount();
+  }, [history, id]);
 
   // Handle form fields changing
   const handleChange = (event) => {
@@ -67,7 +107,7 @@ const PostCreateForm = ({ showAlert }) => {
     }
   };
 
-  // Handle create post submission
+  // Handle edit post submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -79,19 +119,40 @@ const PostCreateForm = ({ showAlert }) => {
 
     // Check if mediaType is Image or Video and append the corresponding file
     if (mediaType === "Image") {
-      formData.append("image", imageInput.current.files[0]);
+      if (imageInput?.current?.files[0]) {
+        formData.append("image", imageInput.current.files[0]);
+        formData.append("video", "");
+      } else if (image) {
+        // Use the existing image if no new image is selected
+        const blob = await fetch(image).then((res) => res.blob());
+        formData.append("image", blob, "existing_image.jpg");
+      } else {
+        showAlert("danger", "Please select an image file.");
+        return;
+      }
     } else if (mediaType === "Video") {
-      formData.append("video", videoInput.current.files[0]);
+      if (videoInput?.current?.files[0]) {
+        formData.append("video", videoInput.current.files[0]);
+        formData.append("image", "");
+      } else if (video) {
+        // Use the existing video if no new video is selected
+        const blob = await fetch(video).then((res) => res.blob());
+        formData.append("video", blob, "existing_video.mp4");
+      } else {
+        showAlert("danger", "Please select a video file.");
+        return;
+      }
     }
 
     try {
-      const { data } = await axiosReq.post("/posts/", formData);
-      showAlert("success", `You have successfully created a post`);
-      history.push(`/posts/${data.id}`);
+      await axiosReq.put(`/posts/${id}/`, formData);
+      showAlert("success", `You have successfully changed your post`);
+      history.push(`/posts/${id}`);
     } catch (err) {
       if (err.response && err.response.data) {
         // Display the error message received from the server
         console.log("Server Error:", err.response.data);
+        showAlert("danger", `There was an error with creating your post.`);
         setErrors(err.response.data);
       } else {
         console.log("Network Error:", err.message);
@@ -100,7 +161,7 @@ const PostCreateForm = ({ showAlert }) => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} encType="multipart/form-data">
       <Container className={appStyles.Content}>
         <Row className="p-4 justify content center">
           <Col md={{ span: 10, offset: 1 }}>
@@ -114,6 +175,7 @@ const PostCreateForm = ({ showAlert }) => {
                     imageInput={imageInput}
                     postData={postData}
                     setPostData={setPostData}
+                    imageFile={image ? new File([image], image.name) : null}
                   />
                 )}
                 {/* Rendered if video upload is selected */}
@@ -162,4 +224,4 @@ const PostCreateForm = ({ showAlert }) => {
   );
 };
 
-export default PostCreateForm;
+export default PostEditForm;

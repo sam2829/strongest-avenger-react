@@ -13,6 +13,7 @@ const PostCreateFormImageField = ({
   setPostData,
   errors,
   imageInput,
+  imageFile,
 }) => {
   // Handle change in image field
   const handleChangeImage = (event) => {
@@ -52,6 +53,7 @@ const PostCreateFormImageField = ({
         accept="image/*"
         onChange={handleChangeImage}
         ref={imageInput}
+        defaultValue={imageFile || ""}
       />
       {errors?.image?.map((message, idx) => (
         <Alert variant="warning" key={idx}>

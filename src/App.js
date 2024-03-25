@@ -11,6 +11,7 @@ import PostCreateForm from "./pages/posts/PostCreateForm";
 import PostPage from "./pages/posts/PostPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import PostsPage from "./pages/posts/PostsPage";
+import PostEditForm from "./pages/posts/PostEditForm";
 
 function App() {
   const { alert, showAlert, hideAlert } = useAlert();
@@ -70,6 +71,11 @@ function App() {
             render={() => <PostCreateForm showAlert={showAlert} />}
           />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
+          <Route
+            exact
+            path="/posts/:id/edit"
+            render={() => <PostEditForm showAlert={showAlert} />}
+          />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>

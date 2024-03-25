@@ -13,7 +13,6 @@ const Post = (props) => {
     id,
     owner,
     character_name,
-    character_category,
     comments_count,
     content,
     image,

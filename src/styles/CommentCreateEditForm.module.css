@@ -1,0 +1,45 @@
+.commentContainer {
+  background-color: #969696;
+  border-radius: 5px;
+  border: 2px solid #8a00c2;
+  padding: 20px;
+  margin-bottom: 70px;
+}
+
+.Form {
+  border: none;
+}
+
+.agreeIcon i {
+  color: #ffac00;
+  font-size: 30px;
+}
+
+.agreeIcon i:hover {
+  color: #8a00c2;
+  transition: color ease-in-out 0.3s;
+}
+
+.Button {
+  border: none;
+  background-color: #242a3d;
+  color: aliceblue;
+  border-radius: 100px;
+  padding: 4px 10px;
+  min-width: 75px;
+  margin: 5px;
+}
+
+.Button:hover {
+  cursor: pointer;
+  background-color: aliceblue;
+  color: #242a3d;
+}
+
+.textarea {
+  background: white;
+  border: 1px solid #ffac00;
+  border-radius: 5px !important;
+  color: black;
+  outline: none !important;
+}
