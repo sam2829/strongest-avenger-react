@@ -8,10 +8,12 @@ import Post from "./Post";
 
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import Comment from "../comments/Comment";
 
 const PostPage = () => {
   const { id } = useParams();
   const [post, setPost] = useState({ results: [] });
+  const [loading, setLoading] = useState(true);
 
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
@@ -20,10 +22,12 @@ const PostPage = () => {
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const [{ data: post }] = await Promise.all([
+        const [{ data: post }, { data: comments }] = await Promise.all([
           axiosReq.get(`/posts/${id}`),
+          axiosReq.get(`/comments/?post=${id}`),
         ]);
         setPost({ results: [post] });
+        setComments(comments);
       } catch (err) {
         console.log(err);
       }
@@ -47,7 +51,7 @@ const PostPage = () => {
           <p>Popular for desktop</p>
         </Col>
         <Col lg={{ span: 6, offset: 3 }}>
-          {currentUser ? (
+          {currentUser && (
             <CommentCreateForm
               profile_id={currentUser.profile_id}
               profileImage={profile_image}
@@ -55,9 +59,18 @@ const PostPage = () => {
               setPost={setPost}
               setComments={setComments}
             />
-          ) : comments.results.length ? (
-            "Comments"
-          ) : null}
+          )}
+          {comments.results.length ? (
+            comments.results.map((comment) => (
+              <Comment key={comment.id} {...comment} />
+            ))
+          ) : (
+            <span>
+              {currentUser
+                ? "No comments, be the first to comment!"
+                : "No comments... yet"}
+            </span>
+          )}
         </Col>
       </Row>
     </>

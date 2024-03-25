@@ -1,0 +1,9 @@
+.tick i {
+  color: #ffac00;
+  font-size: 30px;
+}
+
+.cross i {
+  color: #8a00c2;
+  font-size: 30px;
+}

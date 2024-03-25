@@ -6,7 +6,6 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Alert from "react-bootstrap/Alert";
 
 import styles from "../../styles/CommentCreateEditForm.module.css";
-import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -19,7 +18,7 @@ const CommentCreateForm = ({
   setComments,
 }) => {
   const [content, setContent] = useState("");
-  const [agreed, setAgreed] = useState(false);
+  const [agree, setAgree] = useState(false);
   const [errors, setErrors] = useState({});
 
   // Function so content field displays whats being typed
@@ -28,7 +27,7 @@ const CommentCreateForm = ({
   };
 
   const handleAgree = () => {
-    setAgreed(!agreed);
+    setAgree(!agree);
   };
 
   const handleSubmit = async (event) => {
@@ -37,7 +36,7 @@ const CommentCreateForm = ({
       const { data } = await axiosRes.post("/comments/", {
         content,
         post,
-        agreed,
+        agree,
       });
       setComments((prevComments) => ({
         ...prevComments,
@@ -52,6 +51,7 @@ const CommentCreateForm = ({
         ],
       }));
       setContent("");
+      setAgree(false);
     } catch (err) {
       setErrors(err.response.data);
       console.log(err);
@@ -73,20 +73,20 @@ const CommentCreateForm = ({
             onChange={handleChange}
             rows={2}
           />
-          {agreed && (
+          {agree && (
             <div className={styles.agreeIcon}>
               <i
                 className="fa-solid fa-circle-check"
-                data-value={agreed}
+                data-value={agree}
                 onClick={handleAgree}
               ></i>
             </div>
           )}
-          {!agreed && (
+          {!agree && (
             <div className={styles.agreeIcon}>
               <i
                 className="fa-regular fa-circle-check"
-                data-value={agreed}
+                data-value={agree}
                 onClick={handleAgree}
               ></i>
             </div>
@@ -99,11 +99,7 @@ const CommentCreateForm = ({
         </Alert>
       ))}
       <div className="d-flex justify-content-center">
-        <button
-          className={`${btnStyles.Button}`}
-          //   disabled={!content.trim()}
-          type="submit"
-        >
+        <button className={`${btnStyles.Button}`} type="submit">
           post
         </button>
       </div>
