@@ -52,6 +52,7 @@ const CommentCreateForm = ({
       }));
       setContent("");
       setAgree(false);
+      setErrors({});
     } catch (err) {
       setErrors(err.response.data);
       console.log(err);
@@ -59,7 +60,7 @@ const CommentCreateForm = ({
   };
 
   return (
-    <Form className={styles.commentContainer} onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <Form.Group>
         <InputGroup>
           <Link to={`/profiles/${profile_id}`}>

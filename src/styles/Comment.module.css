@@ -1,9 +1,20 @@
-.tick i {
+.Tick i {
   color: #ffac00;
   font-size: 30px;
 }
 
-.cross i {
+.Cross i {
   color: #8a00c2;
   font-size: 30px;
+}
+
+.Owner {
+  font-weight: 700;
+  margin: 0 6px 0 6px;
+  color: #8a00c2;
+}
+
+.Date {
+  font-weight: 700;
+  font-size: 0.8rem;
 }

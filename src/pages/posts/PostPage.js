@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-
+import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import commentStyles from "../../styles/CommentCreateEditForm.module.css";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Post from "./Post";
@@ -51,26 +52,29 @@ const PostPage = () => {
           <p>Popular for desktop</p>
         </Col>
         <Col lg={{ span: 6, offset: 3 }}>
-          {currentUser && (
-            <CommentCreateForm
-              profile_id={currentUser.profile_id}
-              profileImage={profile_image}
-              post={id}
-              setPost={setPost}
-              setComments={setComments}
-            />
-          )}
-          {comments.results.length ? (
-            comments.results.map((comment) => (
-              <Comment key={comment.id} {...comment} />
-            ))
-          ) : (
-            <span>
-              {currentUser
-                ? "No comments, be the first to comment!"
-                : "No comments... yet"}
-            </span>
-          )}
+          <Container className={commentStyles.commentContainer}>
+            <h3 className={commentStyles.CommentTitle}>Comments</h3>
+            {currentUser && (
+              <CommentCreateForm
+                profile_id={currentUser.profile_id}
+                profileImage={profile_image}
+                post={id}
+                setPost={setPost}
+                setComments={setComments}
+              />
+            )}
+            {comments.results.length ? (
+              comments.results.map((comment) => (
+                <Comment key={comment.id} {...comment} />
+              ))
+            ) : (
+              <p className={commentStyles.Message}>
+                {currentUser
+                  ? "No comments, be the first to comment!"
+                  : "No comments... yet"}
+              </p>
+            )}
+          </Container>
         </Col>
       </Row>
     </>

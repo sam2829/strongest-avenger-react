@@ -1,5 +1,6 @@
 .App {
   font-family: "Roboto", sans-serif;
+  font-weight: 400;
   background-color: rgb(241, 241, 241);
   min-height: 100vh;
   color: black;
