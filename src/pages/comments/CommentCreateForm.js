@@ -80,21 +80,21 @@ const CommentCreateForm = ({
             onChange={handleChange}
             rows={2}
           />
-          {/* Component to toggle agreement on comment */}
-          <CommentAgree agree={agree} setAgree={setAgree} />
         </InputGroup>
+        {/* Display error messages, if any */}
+        {errors?.content?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        {/* Display agree icon */}
+        <div className="d-flex justify-content-center mt-2">
+          <CommentAgree agree={agree} setAgree={setAgree} />
+          <button className={`${btnStyles.Button} ml-2`} type="submit">
+            post
+          </button>
+        </div>
       </Form.Group>
-      {/* Display error messages, if any */}
-      {errors?.content?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-      <div className="d-flex justify-content-center">
-        <button className={`${btnStyles.Button}`} type="submit">
-          post
-        </button>
-      </div>
     </Form>
   );
 };

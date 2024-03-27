@@ -5,7 +5,7 @@
 
 .DropdownItem i {
   color: #ffac00;
-  display: inline-block;
+  display: inline-block !important;
   max-width: 50%;
   padding: 0px;
 }
