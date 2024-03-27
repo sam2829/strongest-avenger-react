@@ -9,7 +9,7 @@ import Post from "./Post";
 
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import Comment from "../comments/Comment";
+import CommentRender from "../comments/CommentRender";
 
 const PostPage = () => {
   const { id } = useParams();
@@ -63,17 +63,7 @@ const PostPage = () => {
                 setComments={setComments}
               />
             )}
-            {comments.results.length ? (
-              comments.results.map((comment) => (
-                <Comment key={comment.id} {...comment} />
-              ))
-            ) : (
-              <p className={commentStyles.Message}>
-                {currentUser
-                  ? "No comments, be the first to comment!"
-                  : "No comments... yet"}
-              </p>
-            )}
+            <CommentRender comments={comments} currentUser={currentUser} />
           </Container>
         </Col>
       </Row>

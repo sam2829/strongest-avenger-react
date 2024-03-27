@@ -35,11 +35,13 @@ const Comment = (props) => {
               sm={4}
               className="d-flex align-items-center justify-content-end"
             >
+              {/* Displays icon if user agreed */}
               {agree && (
                 <div className={styles.Tick}>
                   <i className="fa-solid fa-circle-check"></i>
                 </div>
               )}
+              {/* Displays icon if user disagreed */}
               {!agree && (
                 <div className={styles.Cross}>
                   <i class="fa-solid fa-circle-xmark"></i>
