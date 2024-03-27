@@ -18,6 +18,7 @@ import PostCreateFormImageField from "./PostCreateFormImageField";
 import PostCreateFormVideoField from "./PostCreateFormVideoField";
 import PostCreateFormRadioButtons from "./PostCreateFormRadioButtons";
 
+// PostCreateForm component for creating a new post
 const PostCreateForm = ({ showAlert }) => {
   // handle errors on the post form
   const [errors, setErrors] = useState({});
@@ -42,6 +43,7 @@ const PostCreateForm = ({ showAlert }) => {
     mediaType,
   } = postData;
 
+  // References for image and video inputs
   const imageInput = useRef(null);
   const videoInput = useRef(null);
   const history = useHistory();
@@ -126,6 +128,7 @@ const PostCreateForm = ({ showAlert }) => {
                     setPostData={setPostData}
                   />
                 )}
+                {/* Component for radio buttons image or video */}
                 <PostCreateFormRadioButtons
                   mediaType={mediaType}
                   handleChange={handleChange}
@@ -134,6 +137,7 @@ const PostCreateForm = ({ showAlert }) => {
             </Container>
 
             <Container className={styles.FormFields}>
+              {/* Component to render the text fields in form */}
               <PostCreateFormTextFields
                 title={title}
                 characterName={characterName}

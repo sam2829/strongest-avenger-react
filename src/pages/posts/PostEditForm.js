@@ -18,6 +18,7 @@ import PostCreateFormImageField from "./PostCreateFormImageField";
 import PostCreateFormVideoField from "./PostCreateFormVideoField";
 import PostCreateFormRadioButtons from "./PostCreateFormRadioButtons";
 
+// Component to render post edit form
 const PostEditForm = ({ showAlert }) => {
   // handle errors on the post form
   const [errors, setErrors] = useState({});
@@ -188,6 +189,7 @@ const PostEditForm = ({ showAlert }) => {
                     setPostData={setPostData}
                   />
                 )}
+                {/* Component to render radio buttons image or video */}
                 <PostCreateFormRadioButtons
                   mediaType={mediaType}
                   handleChange={handleChange}
@@ -196,6 +198,7 @@ const PostEditForm = ({ showAlert }) => {
             </Container>
 
             <Container className={styles.FormFields}>
+              {/* Component to render text fields */}
               <PostCreateFormTextFields
                 title={title}
                 characterName={characterName}

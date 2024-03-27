@@ -11,6 +11,7 @@ import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import CommentRender from "../comments/CommentRender";
 
+// PostPage component displays a single post along with its comments
 const PostPage = () => {
   const { id } = useParams();
   const [post, setPost] = useState({ results: [] });
@@ -23,6 +24,7 @@ const PostPage = () => {
   useEffect(() => {
     const handleMount = async () => {
       try {
+        // Fetch post and comments data from the server
         const [{ data: post }, { data: comments }] = await Promise.all([
           axiosReq.get(`/posts/${id}`),
           axiosReq.get(`/comments/?post=${id}`),
@@ -51,9 +53,11 @@ const PostPage = () => {
         <Col lg={{ span: 2, offset: 1 }} className="d-none d-lg-block">
           <p>Popular for desktop</p>
         </Col>
+        {/* Comments section */}
         <Col lg={{ span: 6, offset: 3 }}>
           <Container className={commentStyles.commentContainer}>
             <h3 className={commentStyles.CommentTitle}>Comments</h3>
+            {/* Display comment creation form if user is logged in */}
             {currentUser && (
               <CommentCreateForm
                 profile_id={currentUser.profile_id}
@@ -63,6 +67,7 @@ const PostPage = () => {
                 setComments={setComments}
               />
             )}
+            {/* Render comments */}
             <CommentRender comments={comments} currentUser={currentUser} />
           </Container>
         </Col>

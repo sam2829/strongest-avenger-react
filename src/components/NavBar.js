@@ -14,7 +14,9 @@ import LoggedInNavIcons from "./LoggedInNavIcons";
 import LoggedOutNavIcons from "./LoggedOutNavIcons";
 import UseClickOutsideToggle from "../hooks/UseClickOutsideToggle";
 
+// Navabr component to display Navbar
 const NavBar = ({ showAlert }) => {
+  // Retrieve and set current user
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
@@ -61,7 +63,9 @@ const NavBar = ({ showAlert }) => {
           <br />
           AVENGER
         </NavLink>
+        {/* Display 'Add post' link if user is logged in */}
         {currentUser && addPostIcon}
+        {/* Hamburger menu toggle */}
         <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}
@@ -72,7 +76,7 @@ const NavBar = ({ showAlert }) => {
             <NavLink exact activeClassName={styles.Active} to="/">
               <i className="fas fa-home"></i>Home
             </NavLink>
-
+            {/* Display Navbar items based on if logged in or out */}
             {currentUser ? (
               <LoggedInNavIcons
                 currentUser={currentUser}

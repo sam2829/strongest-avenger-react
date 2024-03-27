@@ -2,14 +2,17 @@ import React from "react";
 import Comment from "../comments/Comment";
 import commentStyles from "../../styles/CommentCreateEditForm.module.css";
 
+// CommentRender component to render a list of comments
 const CommentRender = ({ comments, currentUser }) => {
   return (
     <>
+      {/* Check if there are comments */}
       {comments.results.length ? (
         comments.results.map((comment) => (
           <Comment key={comment.id} {...comment} />
         ))
       ) : (
+        // If there are no comments, display a message depending if user has signed in
         <p className={commentStyles.Message}>
           {currentUser
             ? "No comments, be the first to comment!"

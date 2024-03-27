@@ -13,6 +13,7 @@ import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 
+// Component to render the posts page
 const PostsPage = ({ message, filter = "" }) => {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -22,6 +23,7 @@ const PostsPage = ({ message, filter = "" }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
+        // Function to fetch posts data from the server
         const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
         setPosts(data);
         setHasLoaded(true);
@@ -71,6 +73,7 @@ const PostsPage = ({ message, filter = "" }) => {
         <Col lg={{ span: 6, offset: 1 }}>
           <p>Popular for mobiles</p>
           <p>Search by mobiles</p>
+          {/* Search bar */}
           <i className={`fas fa-search ${styles.SearchIcon}`} />
           <Form
             className={styles.SearchBar}
@@ -83,6 +86,7 @@ const PostsPage = ({ message, filter = "" }) => {
               placeholder="Search posts"
             />
           </Form>
+          {/* Infinite scrolling for posts */}
           <InfiniteScroll
             children={postsContent}
             loader={<Asset spinner />}

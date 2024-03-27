@@ -2,13 +2,16 @@ import React from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 
+// Component for toggling agreement of post to display in comment
 const CommentAgree = ({ agree, setAgree }) => {
+  // Function to handle agreement toggle
   const handleAgree = () => {
     setAgree(!agree);
   };
 
   return (
     <>
+      {/* Render agree icon if agree is true */}
       {agree && (
         <div className={styles.agreeIcon}>
           <OverlayTrigger
@@ -23,6 +26,7 @@ const CommentAgree = ({ agree, setAgree }) => {
           </OverlayTrigger>
         </div>
       )}
+      {/* Render disagree icon if agree is false */}
       {!agree && (
         <div className={styles.agreeIcon}>
           <OverlayTrigger

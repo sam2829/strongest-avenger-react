@@ -13,6 +13,7 @@ import logo from "../../assets/logo.png";
 import axios from "axios";
 import { SetCurrentUserContext } from "../../contexts/CurrentUserContext";
 
+// SignInForm component for user sign in
 export class SignInForm extends Component {
   constructor(props) {
     super(props);
@@ -80,6 +81,7 @@ export class SignInForm extends Component {
           <Col md={{ span: 6 }}>
             <Container>
               <Form onSubmit={this.handleSubmit}>
+                {/* Username input field */}
                 <Form.Group controlId="username">
                   <Form.Label className="d-none">username</Form.Label>
                   <Form.Control
@@ -91,11 +93,13 @@ export class SignInForm extends Component {
                     onChange={this.handleChange}
                   />
                 </Form.Group>
+                {/* Displaying username errors, if any */}
                 {errors.username?.map((message, idx) => (
                   <Alert variant="warning" key={idx}>
                     {message}
                   </Alert>
                 ))}
+                {/* Password input field */}
                 <Form.Group controlId="password">
                   <Form.Label className="d-none">Password</Form.Label>
                   <Form.Control
@@ -107,14 +111,17 @@ export class SignInForm extends Component {
                     onChange={this.handleChange}
                   />
                 </Form.Group>
+                {/* Displaying password errors, if any */}
                 {errors.password?.map((message, idx) => (
                   <Alert variant="warning" key={idx}>
                     {message}
                   </Alert>
                 ))}
+                {/* Sign in button */}
                 <Button className={btnStyles.Button} type="submit">
                   Sign in
                 </Button>
+                {/* Displaying non-field errors, if any */}
                 {errors.non_field_errors?.map((message, idx) => (
                   <Alert key={idx} variant="warning" className="mt-3">
                     {message}
@@ -124,6 +131,7 @@ export class SignInForm extends Component {
             </Container>
           </Col>
         </Row>
+        {/* Link to sign up page */}
         <Row className="justify-content-center text-center p-2">
           <Col md={{ span: 6 }}>
             <Container>
@@ -138,6 +146,8 @@ export class SignInForm extends Component {
   }
 }
 
+// Using withRouter HOC to access router props and wrapping
+// SignInForm with SetCurrentUserContext Consumer
 export default withRouter((props) => (
   <SetCurrentUserContext.Consumer>
     {(setCurrentUser) => (

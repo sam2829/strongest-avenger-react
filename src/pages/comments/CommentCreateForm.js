@@ -12,6 +12,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 
 import CommentAgree from "./CommentAgree";
 
+// CommentCreateForm component for creating a new comment
 const CommentCreateForm = ({
   profile_id,
   profileImage,
@@ -19,6 +20,7 @@ const CommentCreateForm = ({
   setPost,
   setComments,
 }) => {
+  // State variables for content, agreement, and errors
   const [content, setContent] = useState("");
   const [agree, setAgree] = useState(false);
   const [errors, setErrors] = useState({});
@@ -28,6 +30,7 @@ const CommentCreateForm = ({
     setContent(event.target.value);
   };
 
+  // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -36,10 +39,12 @@ const CommentCreateForm = ({
         post,
         agree,
       });
+      // Update comments state with the new comment
       setComments((prevComments) => ({
         ...prevComments,
         results: [data, ...prevComments.results],
       }));
+      // Update post state to increment comments count
       setPost((prevPost) => ({
         results: [
           {
@@ -48,6 +53,7 @@ const CommentCreateForm = ({
           },
         ],
       }));
+      // Clear content and reset agreement and errors
       setContent("");
       setAgree(false);
       setErrors({});
@@ -62,8 +68,10 @@ const CommentCreateForm = ({
       <Form.Group>
         <InputGroup>
           <Link to={`/profiles/${profile_id}`}>
+            {/* Avatar of the comment creator */}
             <Avatar src={profileImage} />
           </Link>
+          {/* Input field for entering comment content */}
           <Form.Control
             className={`${styles.textarea} ${styles.Form}`}
             placeholder="my comment..."
@@ -72,9 +80,11 @@ const CommentCreateForm = ({
             onChange={handleChange}
             rows={2}
           />
+          {/* Component to toggle agreement on comment */}
           <CommentAgree agree={agree} setAgree={setAgree} />
         </InputGroup>
       </Form.Group>
+      {/* Display error messages, if any */}
       {errors?.content?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}

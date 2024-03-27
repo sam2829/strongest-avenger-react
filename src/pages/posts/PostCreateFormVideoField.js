@@ -6,6 +6,7 @@ import Upload from "../../assets/upload.png";
 import Alert from "react-bootstrap/Alert";
 import btnStyles from "../../styles/Button.module.css";
 
+// Component for rendering video field in create post form
 const PostCreateFormVideoField = ({
   video,
   postData,
@@ -26,6 +27,7 @@ const PostCreateFormVideoField = ({
 
   return (
     <>
+      {/* Render video player if video is available */}
       {video ? (
         <>
           <figure>
@@ -33,6 +35,7 @@ const PostCreateFormVideoField = ({
               <video src={video} className={styles.Media} controls>
                 Your browser does not support the video tag.
               </video>
+              {/* Play button */}
               <div
                 className={styles.PlayButton}
                 onClick={() => document.getElementById("video").play()}
@@ -40,12 +43,14 @@ const PostCreateFormVideoField = ({
             </div>
           </figure>
           <div>
+            {/* Button to change the video */}
             <Form.Label className={btnStyles.Button} htmlFor="video-upload">
               Change the video
             </Form.Label>
           </div>
         </>
       ) : (
+        // Render upload option if video is not available
         <Form.Label
           className="d-flex justify-content-center"
           htmlFor="video-upload"
@@ -60,6 +65,7 @@ const PostCreateFormVideoField = ({
         onChange={handleChangeVideo}
         ref={videoInput}
       />
+      {/* Display error messages for the video field, if any */}
       {errors?.video?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}

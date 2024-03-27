@@ -7,6 +7,7 @@ import Upload from "../../assets/upload.png";
 import styles from "../../styles/PostCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
+// Component for rendering the post form image upload field
 const PostCreateFormImageField = ({
   image,
   postData,
@@ -29,6 +30,7 @@ const PostCreateFormImageField = ({
   return (
     <>
       {image ? (
+        // Display uploaded image
         <>
           <figure>
             <Image className={styles.Media} src={image} rounded />
@@ -40,6 +42,7 @@ const PostCreateFormImageField = ({
           </div>
         </>
       ) : (
+        // Display upload button if no image uploaded
         <Form.Label
           className="d-flex justify-content-center"
           htmlFor="image-upload"
@@ -47,6 +50,7 @@ const PostCreateFormImageField = ({
           <Asset src={Upload} message="Click or tap to upload an image" />
         </Form.Label>
       )}
+      {/* File input for selecting an image */}
       <Form.File
         id="image-upload"
         className={styles.ChooseFile}
@@ -55,6 +59,7 @@ const PostCreateFormImageField = ({
         ref={imageInput}
         defaultValue={imageFile || ""}
       />
+      {/* Display error messages, if any */}
       {errors?.image?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}

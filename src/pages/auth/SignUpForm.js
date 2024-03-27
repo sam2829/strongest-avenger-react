@@ -13,6 +13,7 @@ import logo from "../../assets/logo.png";
 import axios from "axios";
 import { useState } from "react";
 
+// SignUpForm component for user sign up
 const SignUpForm = () => {
   // Use state hook for Signup data
   const [signUpData, setSignUpData] = useState({
@@ -67,6 +68,7 @@ const SignUpForm = () => {
         <Col md={{ span: 6 }}>
           <Container>
             <Form onSubmit={handleSubmit}>
+              {/* Username input field */}
               <Form.Group controlId="username">
                 <Form.Label className="d-none">username</Form.Label>
                 <Form.Control
@@ -78,11 +80,13 @@ const SignUpForm = () => {
                   onChange={handleChange}
                 />
               </Form.Group>
+              {/* Displaying username errors, if any */}
               {errors.username?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
               ))}
+              {/* Password input field */}
               <Form.Group controlId="password1">
                 <Form.Label className="d-none">Password</Form.Label>
                 <Form.Control
@@ -94,11 +98,13 @@ const SignUpForm = () => {
                   onChange={handleChange}
                 />
               </Form.Group>
+              {/* Displaying password1 errors, if any */}
               {errors.password1?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
               ))}
+              {/* Confirm password input field */}
               <Form.Group controlId="password2">
                 <Form.Label className="d-none">Password</Form.Label>
                 <Form.Control
@@ -110,11 +116,13 @@ const SignUpForm = () => {
                   onChange={handleChange}
                 />
               </Form.Group>
+              {/* Displaying password2 errors, if any */}
               {errors.password2?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
               ))}
+              {/* Sign up button */}
               <Button className={btnStyles.Button} type="submit">
                 Sign up
               </Button>
@@ -127,6 +135,7 @@ const SignUpForm = () => {
           </Container>
         </Col>
       </Row>
+      {/* Link to sign in page */}
       <Row className="justify-content-center text-center p-2">
         <Col md={{ span: 6 }}>
           <Container>

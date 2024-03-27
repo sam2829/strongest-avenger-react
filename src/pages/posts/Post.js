@@ -8,7 +8,9 @@ import PostLikeIcon from "./PostLikeIcon";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { axiosRes } from "../../api/axiosDefaults";
 
+// Post component to display a single post
 const Post = (props) => {
+  // Destructure props to access post data
   const {
     id,
     owner,
@@ -27,6 +29,7 @@ const Post = (props) => {
     setPosts,
   } = props;
 
+  // Get current user and if if user is owner of post
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
@@ -51,11 +54,14 @@ const Post = (props) => {
       <Card.Body className={styles.PostBody}>
         <Media className="align-items-center justify-content-between">
           <Link to={`/profiles/${profile_id}`}>
+            {/* Display post owner's avatar */}
             <Avatar src={profile_image} height={45} />
             {owner}
           </Link>
           <div className="d-flex align-items-center">
+            {/* Display post's last updated time */}
             <span>{updated_at}</span>
+            {/* Display dropdown menu for post actions if user is the owner and it's a post page */}
             {is_owner && postPage && (
               <MoreDropdown
                 handleDelete={handleDelete}
@@ -66,6 +72,7 @@ const Post = (props) => {
         </Media>
         <Card.Title className={styles.PostTitle}>
           <div>
+            {/* Display character name */}
             <span>{character_name}</span>
           </div>
         </Card.Title>
@@ -89,6 +96,7 @@ const Post = (props) => {
         <Card.Text className="text-center py-2">{content}</Card.Text>
         <div className={styles.PostIcons}>
           <div className={styles.IconContainer}>
+            {/* Component for handling post like */}
             <PostLikeIcon
               id={id}
               is_owner={is_owner}
@@ -102,9 +110,10 @@ const Post = (props) => {
             <Link to={`/posts/${id}`}>
               <i className="far fa-comments" />
             </Link>
+            {/* Display comments count */}
             {comments_count}
           </div>
-
+          {/* Display exclamation icon for reporting post if user is logged in */}
           {currentUser && (
             <div className={styles.IconContainer}>
               <span onClick={() => {}}>

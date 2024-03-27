@@ -3,6 +3,7 @@ import styles from "../../styles/Post.module.css";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { axiosRes } from "../../api/axiosDefaults";
 
+// PostLikeIcon component renders the like icon for a post
 const PostLikeIcon = ({
   id,
   is_owner,
@@ -11,9 +12,11 @@ const PostLikeIcon = ({
   currentUser,
   setPosts,
 }) => {
+  // Function to handle like action
   const handleLike = async () => {
     try {
       const { data } = await axiosRes.post("/likes/", { post: id });
+      // Update the posts state with new like data
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
@@ -27,9 +30,11 @@ const PostLikeIcon = ({
     }
   };
 
+  // Function to handle unlike action
   const handleUnlike = async () => {
     try {
       await axiosRes.delete(`/likes/${like_id}/`);
+      // Update the posts state with new unlike data
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
@@ -45,6 +50,7 @@ const PostLikeIcon = ({
 
   return (
     <>
+      {/* Render different like icons based on conditions */}
       {is_owner ? (
         <OverlayTrigger
           placement="top"
@@ -53,10 +59,12 @@ const PostLikeIcon = ({
           <i className="far fa-heart" />
         </OverlayTrigger>
       ) : like_id ? (
+        // Unlike action
         <span onClick={handleUnlike}>
           <i className={`fas fa-heart ${styles.Heart}`} />
         </span>
       ) : currentUser ? (
+        // Like action
         <span onClick={handleLike}>
           <i className={`far fa-heart ${styles.HeartOutline}`} />
         </span>
@@ -68,6 +76,7 @@ const PostLikeIcon = ({
           <i className="far fa-heart" />
         </OverlayTrigger>
       )}
+      {/* Display likes count */}
       {likes_count}
     </>
   );

@@ -6,18 +6,22 @@ import styles from "../../styles/Comment.module.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+// Comment component to display a single comment
 const Comment = (props) => {
   const { profile_id, profile_image, owner, updated_at, content, agree } =
     props;
 
   return (
     <div>
+      {/* Horizontal line to separate comments */}
       <hr />
       <Media>
         <Link to={`/profiles/${profile_id}`}>
+          {/* Avatar of the comment owner */}
           <Avatar src={profile_image} />
         </Link>
         <Media.Body>
+          {/* Row to display owner name and date in columns */}
           <Row className="my-2">
             <Col xs={12} sm={8} className="text-left">
               <span className={styles.Owner}>{owner}</span>
@@ -26,6 +30,7 @@ const Comment = (props) => {
               <span className={styles.Date}>{updated_at}</span>
             </Col>
           </Row>
+          {/* Row to display comment content and agree/disagree icons */}
           <Row className="my-2 pt-4">
             <Col xs={12} sm={8} className="text-left">
               <p>{content}</p>

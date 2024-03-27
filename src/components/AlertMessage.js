@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Alert from "react-bootstrap/Alert";
 import styles from "../styles/AlertMessage.module.css";
 
+// Functional component for displaying alert messages
 const AlertMessage = ({ variant, message, showAlert }) => {
   const [show, setShow] = useState(true);
 
@@ -41,9 +42,11 @@ const AlertMessage = ({ variant, message, showAlert }) => {
   );
 };
 
+// Custom hook for managing alert state and actions
 export const useAlert = () => {
   const [alert, setAlert] = useState(null);
 
+  // Show alert with specified variant and message
   const showAlert = (variant, message) => {
     setAlert({ variant, message });
   };
