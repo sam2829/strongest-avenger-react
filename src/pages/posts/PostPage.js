@@ -68,7 +68,12 @@ const PostPage = () => {
               />
             )}
             {/* Render comments */}
-            <CommentRender comments={comments} currentUser={currentUser} />
+            <CommentRender
+              comments={comments}
+              currentUser={currentUser}
+              setPost={setPost}
+              setComments={setComments}
+            />
           </Container>
         </Col>
       </Row>
