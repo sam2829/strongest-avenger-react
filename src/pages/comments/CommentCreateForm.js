@@ -10,6 +10,8 @@ import btnStyles from "../../styles/Button.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
+import CommentAgree from "./CommentAgree";
+
 const CommentCreateForm = ({
   profile_id,
   profileImage,
@@ -24,10 +26,6 @@ const CommentCreateForm = ({
   // Function so content field displays whats being typed
   const handleChange = (event) => {
     setContent(event.target.value);
-  };
-
-  const handleAgree = () => {
-    setAgree(!agree);
   };
 
   const handleSubmit = async (event) => {
@@ -74,24 +72,7 @@ const CommentCreateForm = ({
             onChange={handleChange}
             rows={2}
           />
-          {agree && (
-            <div className={styles.agreeIcon}>
-              <i
-                className="fa-solid fa-circle-check"
-                data-value={agree}
-                onClick={handleAgree}
-              ></i>
-            </div>
-          )}
-          {!agree && (
-            <div className={styles.agreeIcon}>
-              <i
-                className="fa-regular fa-circle-check"
-                data-value={agree}
-                onClick={handleAgree}
-              ></i>
-            </div>
-          )}
+          <CommentAgree agree={agree} setAgree={setAgree} />
         </InputGroup>
       </Form.Group>
       {errors?.content?.map((message, idx) => (

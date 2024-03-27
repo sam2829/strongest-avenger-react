@@ -27,11 +27,12 @@ const Comment = (props) => {
             </Col>
           </Row>
           <Row className="my-2 pt-4">
-            <Col xs={8} className="text-left">
+            <Col xs={12} sm={8} className="text-left">
               <p>{content}</p>
             </Col>
             <Col
-              xs={4}
+              xs={12}
+              sm={4}
               className="d-flex align-items-center justify-content-end"
             >
               {agree && (
