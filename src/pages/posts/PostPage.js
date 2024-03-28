@@ -10,6 +10,9 @@ import Post from "./Post";
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import CommentRender from "../comments/CommentRender";
+import Asset from "../../components/Asset";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 // PostPage component displays a single post along with its comments
 const PostPage = () => {
@@ -68,12 +71,19 @@ const PostPage = () => {
               />
             )}
             {/* Render comments */}
-            <CommentRender
-              comments={comments}
-              currentUser={currentUser}
-              setPost={setPost}
-              setComments={setComments}
-            />
+            <InfiniteScroll
+              loader={<Asset spinner />}
+              dataLength={comments.results.length}
+              hasMore={!!comments.next}
+              next={() => fetchMoreData(comments, setComments)}
+            >
+              <CommentRender
+                comments={comments}
+                currentUser={currentUser}
+                setPost={setPost}
+                setComments={setComments}
+              />
+            </InfiniteScroll>
           </Container>
         </Col>
       </Row>
