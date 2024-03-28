@@ -71,3 +71,9 @@ hr {
   color: #8a00c2;
   font-size: 1rem;
 }
+
+/* Edit form text area */
+
+.EditContent {
+  margin-top: 15px;
+}

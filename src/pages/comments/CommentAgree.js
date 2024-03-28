@@ -6,7 +6,7 @@ import styles from "../../styles/CommentCreateEditForm.module.css";
 const CommentAgree = ({ agree, setAgree }) => {
   // Function to handle agreement toggle
   const handleAgree = () => {
-    setAgree(!agree);
+    setAgree((prevAgree) => !prevAgree);
   };
 
   return (
