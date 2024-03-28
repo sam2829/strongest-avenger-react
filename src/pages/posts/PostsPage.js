@@ -12,6 +12,7 @@ import Post from "./Post";
 import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 // Component to render the posts page
 const PostsPage = ({ message, filter = "" }) => {
@@ -71,7 +72,7 @@ const PostsPage = ({ message, filter = "" }) => {
           <p>Search by desktop:</p>
         </Col>
         <Col lg={{ span: 6, offset: 1 }}>
-          <p>Popular for mobiles</p>
+          <PopularProfiles mobile />
           <p>Search by mobiles</p>
           {/* Search bar */}
           <i className={`fas fa-search ${styles.SearchIcon}`} />
@@ -95,8 +96,8 @@ const PostsPage = ({ message, filter = "" }) => {
             next={() => fetchMoreData(posts, setPosts)}
           />
         </Col>
-        <Col lg={{ span: 2, offset: 1 }} className="d-none d-lg-block">
-          <p>Popular for desktop</p>
+        <Col lg={{ span: 3 }} className="d-none d-lg-block">
+          <PopularProfiles />
         </Col>
       </Row>
     </>
