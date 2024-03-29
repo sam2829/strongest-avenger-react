@@ -6,6 +6,7 @@ import Image from "react-bootstrap/Image";
 import styles from "../../styles/ProfilePage.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useSetProfileData } from "../../contexts/ProfileDataContext";
+import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
@@ -20,6 +21,8 @@ const MainProfile = ({ profile }) => {
 
   return (
     <>
+      {/* Drop down menu so user can edit own profile */}
+      {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       {/* Profile information layout */}
       <Row className="text-center px-4">
         <Col lg={3}>
