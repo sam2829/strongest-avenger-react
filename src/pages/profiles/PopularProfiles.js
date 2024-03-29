@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
 import styles from "../../styles/PopularProfiles.module.css";
 import appStyles from "../../App.module.css";
@@ -25,7 +25,7 @@ const PopularProfiles = ({ mobile }) => {
           </Container>
           {/* What is rendered in mobile */}
           {mobile && (
-            <div style={{ display: "flex", justifyContent: "around" }}>
+            <div className="d-flex justify-content-around">
               {popularProfiles.results.slice(0, 4).map((profile) => (
                 <Profile key={profile.id} profile={profile} mobile />
               ))}

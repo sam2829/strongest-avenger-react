@@ -44,3 +44,28 @@
   margin-top: 0;
   font-weight: 700;
 }
+
+.UnFollow {
+  font-size: 0.7rem;
+  padding: 2px 2px;
+  margin-top: 0;
+  font-weight: 700;
+  color: #8a00c2;
+}
+
+/* Main profile page follow and unfollow buttons */
+
+.ProfilePageFollow {
+  font-size: 0.8rem;
+  padding: 6px 6px;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.ProfilePageUnFollow {
+  font-size: 0.8rem;
+  padding: 6px 6px;
+  margin-top: 10px;
+  font-weight: 700;
+  color: #8a00c2;
+}

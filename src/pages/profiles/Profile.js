@@ -31,12 +31,11 @@ const Profile = (props) => {
       </div>
       {/* Follow/Unfollow button depending on conditions */}
       <div className={`text-right ${!mobile && "ml-auto"}`}>
-        {!mobile &&
-          currentUser &&
+        {currentUser &&
           !is_owner &&
           (following_id ? (
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Follow}`}
+              className={`${btnStyles.Button} ${btnStyles.UnFollow}`}
               onClick={() => {}}
             >
               unfollow
