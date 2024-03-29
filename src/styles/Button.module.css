@@ -43,6 +43,15 @@
   padding: 2px 2px;
   margin-top: 0;
   font-weight: 700;
+  color: #8a00c2;
+}
+
+.Follow:hover {
+  opacity: 0.8;
+  border-color: transparent;
+  cursor: pointer;
+  background-color: #8a00c2;
+  color: #ffac00;
 }
 
 .UnFollow {
@@ -50,7 +59,9 @@
   padding: 2px 2px;
   margin-top: 0;
   font-weight: 700;
-  color: #8a00c2;
+  background-color: #8a00c2;
+  color: #ffac00;
+  outline: 3px solid #8a00c2 !important;
 }
 
 /* Main profile page follow and unfollow buttons */
@@ -60,6 +71,7 @@
   padding: 6px 6px;
   margin-top: 10px;
   font-weight: 700;
+  color: #8a00c2;
 }
 
 .ProfilePageUnFollow {
@@ -67,5 +79,7 @@
   padding: 6px 6px;
   margin-top: 10px;
   font-weight: 700;
-  color: #8a00c2;
+  background-color: #8a00c2;
+  color: #ffac00;
+  outline: 3px solid #8a00c2 !important;
 }

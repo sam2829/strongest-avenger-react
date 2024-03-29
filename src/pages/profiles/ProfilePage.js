@@ -20,25 +20,30 @@ import {
 import MainProfile from "./MainProfile";
 import MainProfilePosts from "./MainProfilePosts";
 
+// Functional Component for Profile Page
 const ProfilePage = () => {
+  // State variables
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [profilePosts, setProfilePosts] = useState({ results: [] });
+  // Hooks
   const currentUser = useCurrentUser();
   const { id } = useParams();
-  const setProfileData = useSetProfileData();
+  const { setProfileData, handleFollow } = useSetProfileData();
   const { pageProfile } = useProfileData();
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
 
-  const [profilePosts, setProfilePosts] = useState({ results: [] });
-
+  // Fetch data on component mount
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // Fetch profile and profile posts data
         const [{ data: pageProfile }, { data: profilePosts }] =
           await Promise.all([
             axiosReq.get(`/profiles/${id}/`),
             axiosReq.get(`/posts/?owner__profile=${id}`),
           ]);
+        // Update profile data in context
         setProfileData((prevState) => ({
           ...prevState,
           pageProfile: { results: [pageProfile] },
@@ -56,12 +61,13 @@ const ProfilePage = () => {
     <>
       <Row>
         <Col lg={{ span: 8, offset: 1 }}>
+          {/* Popular profiles component */}
           <PopularProfiles mobile />
-
+          {/* Render main profile and posts if data has loaded */}
           {hasLoaded && (
             <>
               <Container className={appStyles.Content}>
-                <MainProfile profile={profile} />
+                <MainProfile profile={profile} handleFollow={handleFollow} />
               </Container>
               <MainProfilePosts
                 profile={profile}
@@ -70,6 +76,7 @@ const ProfilePage = () => {
               />
             </>
           )}
+          {/* Render loading spinner if data has not loaded */}
           {!hasLoaded && (
             <Container className={appStyles.Content}>
               <Asset spinner />

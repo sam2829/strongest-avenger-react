@@ -5,6 +5,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { Button } from "react-bootstrap";
+import { useSetProfileData } from "../../contexts/ProfileDataContext";
 
 const Profile = (props) => {
   // Destructure props
@@ -14,6 +15,9 @@ const Profile = (props) => {
   // Get current user from custom hook and check if owner of profile
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+
+  // Hook to allow to follow user
+  const { handleFollow } = useSetProfileData();
 
   return (
     <div
@@ -43,7 +47,7 @@ const Profile = (props) => {
           ) : (
             <Button
               className={`${btnStyles.Button} ${btnStyles.Follow}`}
-              onClick={() => {}}
+              onClick={() => handleFollow(profile)}
             >
               follow
             </Button>

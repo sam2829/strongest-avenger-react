@@ -8,7 +8,7 @@ import btnStyles from "../../styles/Button.module.css";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-const MainProfile = ({ profile }) => {
+const MainProfile = ({ profile, handleFollow }) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === profile?.owner;
 
@@ -51,7 +51,7 @@ const MainProfile = ({ profile }) => {
             ) : (
               <Button
                 className={`${btnStyles.Button} ${btnStyles.ProfilePageFollow}`}
-                onClick={() => {}}
+                onClick={() => handleFollow(profile)}
               >
                 follow
               </Button>
