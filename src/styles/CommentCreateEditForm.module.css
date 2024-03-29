@@ -21,7 +21,7 @@
   transition: color ease-in-out 0.3s;
 }
 
-.Button {
+/* .Button {
   border: none;
   background-color: #242a3d;
   color: aliceblue;
@@ -35,7 +35,7 @@
   cursor: pointer;
   background-color: aliceblue;
   color: #242a3d;
-}
+} */
 
 .textarea {
   background: white;
