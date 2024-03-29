@@ -28,7 +28,7 @@ const ProfilePage = () => {
   // Hooks
   const currentUser = useCurrentUser();
   const { id } = useParams();
-  const { setProfileData, handleFollow } = useSetProfileData();
+  const { setProfileData } = useSetProfileData();
   const { pageProfile } = useProfileData();
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
@@ -67,7 +67,7 @@ const ProfilePage = () => {
           {hasLoaded && (
             <>
               <Container className={appStyles.Content}>
-                <MainProfile profile={profile} handleFollow={handleFollow} />
+                <MainProfile profile={profile} />
               </Container>
               <MainProfilePosts
                 profile={profile}

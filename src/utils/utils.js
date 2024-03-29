@@ -27,9 +27,24 @@ export const followHelper = (profile, clickedProfile, following_id) => {
   return id === clickedProfile.id
     ? // If yes, update followers count and following ID
       { ...profile, followers_count: followers_count + 1, following_id }
+    : is_owner
+      ? // If it's the profile of the logged-in user, update following count
+        { ...profile, following_count: following_count + 1 }
+      : // Otherwise, return the profile unchanged
+        profile;
+};
+
+// Function to handle unfollowing actions
+export const unfollowHelper = (profile, clickedProfile) => {
+  const { id, is_owner, followers_count, following_count } = profile;
+
+  // Check if the profile being interacted with is the clicked profile
+  return id === clickedProfile.id
+    ? // If yes, update followers count and following ID
+      { ...profile, followers_count: followers_count - 1, following_id: null }
     : // If it's the profile of the logged-in user, update following count
       is_owner
-      ? { ...profile, following_count: following_count + 1 }
+      ? { ...profile, following_count: following_count - 1 }
       : // Otherwise, return the profile unchanged
         profile;
 };

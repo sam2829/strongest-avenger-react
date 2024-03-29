@@ -13,6 +13,7 @@ import CommentRender from "../comments/CommentRender";
 import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 // PostPage component displays a single post along with its comments
 const PostPage = () => {
@@ -49,12 +50,12 @@ const PostPage = () => {
           <p>Search by desktop:</p>
         </Col>
         <Col lg={{ span: 6, offset: 1 }}>
-          <p>Popular for mobiles</p>
+          <PopularProfiles mobile />
           <p>Search by mobiles</p>
           <Post {...post.results[0]} setPosts={setPost} postPage />
         </Col>
         <Col lg={{ span: 2, offset: 1 }} className="d-none d-lg-block">
-          <p>Popular for desktop</p>
+          <PopularProfiles />
         </Col>
         {/* Comments section */}
         <Col lg={{ span: 6, offset: 3 }}>

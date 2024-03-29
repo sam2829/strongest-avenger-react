@@ -5,15 +5,22 @@ import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import styles from "../../styles/ProfilePage.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import { useSetProfileData } from "../../contexts/ProfileDataContext";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-const MainProfile = ({ profile, handleFollow }) => {
+// Component rendering the main profile section
+const MainProfile = ({ profile }) => {
+  // Check if user is logged in and the owner
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === profile?.owner;
 
+  // Hook to allow to follow and unfollow user
+  const { handleFollow, handleUnfollow } = useSetProfileData();
+
   return (
     <>
+      {/* Profile information layout */}
       <Row className="text-center px-4">
         <Col lg={3}>
           <Image
@@ -22,11 +29,13 @@ const MainProfile = ({ profile, handleFollow }) => {
             src={profile?.image}
           />
         </Col>
+        {/* Profile owner and favorite character */}
         <Col lg={4}>
           <h3 className="m-4">{profile?.owner}</h3>
           <h5 className="m-4">Favourite Character:</h5>
           <h5 className="m-2">{profile?.favourite_character}</h5>
         </Col>
+        {/* Profile stats: posts, followers, following */}
         <Col lg={3}>
           <p className="m-4">
             Posts: <span>{profile?.posts_count}</span>
@@ -38,13 +47,14 @@ const MainProfile = ({ profile, handleFollow }) => {
             Following: <span>{profile?.following_count}</span>
           </p>
         </Col>
+        {/* Follow/Unfollow button */}
         <Col lg={2} className="text-lg-right">
           {currentUser &&
             !is_owner &&
             (profile?.following_id ? (
               <Button
                 className={`${btnStyles.Button} ${btnStyles.ProfilePageUnFollow}`}
-                onClick={() => {}}
+                onClick={() => handleUnfollow(profile)}
               >
                 unfollow
               </Button>
@@ -58,6 +68,7 @@ const MainProfile = ({ profile, handleFollow }) => {
             ))}
         </Col>
       </Row>
+      {/* About me section */}
       <Row>
         <Col>
           <p>About me:</p>
