@@ -116,9 +116,9 @@ const Post = (props) => {
           {/* Display exclamation icon for reporting post if user is logged in */}
           {currentUser && (
             <div className={styles.IconContainer}>
-              <span onClick={() => {}}>
+              <Link to={`/report/${id}`}>
                 <i className="fa-solid fa-circle-exclamation"></i>
-              </span>
+              </Link>
             </div>
           )}
         </div>

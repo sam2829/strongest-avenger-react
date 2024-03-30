@@ -16,6 +16,7 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import PasswordForm from "./pages/profiles/PasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+import CreateReportForm from "./pages/report/CreateReportForm";
 
 function App() {
   const { alert, showAlert, hideAlert } = useAlert();
@@ -95,6 +96,11 @@ function App() {
             exact
             path="/profiles/:id/edit"
             render={() => <ProfileEditForm showAlert={showAlert} />}
+          />
+          <Route
+            exact
+            path="/report/:id/"
+            render={() => <CreateReportForm showAlert={showAlert} />}
           />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
