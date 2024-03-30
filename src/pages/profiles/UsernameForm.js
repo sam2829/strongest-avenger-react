@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import styles from "../../styles/UsernameForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+import logo from "../../assets/logo.png";
 import { useHistory, useParams } from "react-router-dom";
 import {
   useCurrentUser,
@@ -60,14 +61,27 @@ const UsernameForm = () => {
 
   return (
     <Container className={appStyles.Content}>
+      {/* heading section with logo and heading */}
+      <Row className={`${styles.Row} justify-content-center`}>
+        <Col md={{ span: 6 }}>
+          <Container>
+            <Row className="text-center">
+              <Col xs="2">
+                <img src={logo} alt="logo" height="40" />
+              </Col>
+              <Col xs="8">
+                <h1 className={styles.Heading}>Change username</h1>
+              </Col>
+            </Row>
+          </Container>
+        </Col>
+      </Row>
       <Row className="justify-content-center text-center my-3">
         <Col md={6}>
           <Form onSubmit={handleSubmit}>
             {/* Username input field */}
             <Form.Group>
-              <Form.Label className={styles.Username}>
-                Change Username
-              </Form.Label>
+              <Form.Label className="d-none">Change Username</Form.Label>
               <Form.Control
                 placeholder="new username"
                 type="text"
