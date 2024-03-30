@@ -84,17 +84,17 @@ function App() {
           <Route
             exact
             path="/profiles/:id/edit/username"
-            render={() => <UsernameForm />}
+            render={() => <UsernameForm showAlert={showAlert} />}
           />
           <Route
             exact
             path="/profiles/:id/edit/password"
-            render={() => <PasswordForm />}
+            render={() => <PasswordForm showAlert={showAlert} />}
           />
           <Route
             exact
             path="/profiles/:id/edit"
-            render={() => <ProfileEditForm />}
+            render={() => <ProfileEditForm showAlert={showAlert} />}
           />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>

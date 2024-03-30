@@ -16,7 +16,7 @@ import {
 } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 
-const UsernameForm = () => {
+const UsernameForm = ({ showAlert }) => {
   // Use state hook for username
   const [username, setUsername] = useState("");
   // Use state hook for errors
@@ -52,6 +52,7 @@ const UsernameForm = () => {
         ...prevUser,
         username,
       }));
+      showAlert("success", `You have successfully changed your username`);
       history.goBack();
     } catch (err) {
       console.log(err);

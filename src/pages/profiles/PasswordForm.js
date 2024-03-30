@@ -13,7 +13,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 
-const PasswordForm = () => {
+const PasswordForm = ({ showAlert }) => {
   // Use state hook for password
   const [passwordData, setPasswordData] = useState({
     new_password1: "",
@@ -49,6 +49,7 @@ const PasswordForm = () => {
     event.preventDefault();
     try {
       await axiosRes.post("/dj-rest-auth/password/change/", passwordData);
+      showAlert("success", `You have successfully created a post`);
       history.goBack();
     } catch (err) {
       console.log(err);
