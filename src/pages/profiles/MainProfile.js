@@ -35,19 +35,24 @@ const MainProfile = ({ profile }) => {
         {/* Profile owner and favorite character */}
         <Col lg={4}>
           <h3 className="m-4">{profile?.owner}</h3>
-          <h5 className="m-4">Favourite Character:</h5>
-          <h5 className="m-2">{profile?.favourite_character}</h5>
+          <h5 className="mt-4">Favourite Character:</h5>
+          <h5 className={styles.FavCharacter}>
+            {profile?.favourite_character}
+          </h5>
         </Col>
         {/* Profile stats: posts, followers, following */}
         <Col lg={3}>
           <p className="m-4">
-            Posts: <span>{profile?.posts_count}</span>
+            Posts:{" "}
+            <span className={styles.Counters}>{profile?.posts_count}</span>
           </p>
           <p className="mx-4">
-            Followers: <span>{profile?.followers_count}</span>
+            Followers:{" "}
+            <span className={styles.Counters}>{profile?.followers_count}</span>
           </p>
           <p className="m-4">
-            Following: <span>{profile?.following_count}</span>
+            Following:{" "}
+            <span className={styles.Counters}>{profile?.following_count}</span>
           </p>
         </Col>
         {/* Follow/Unfollow button */}
@@ -74,7 +79,7 @@ const MainProfile = ({ profile }) => {
       {/* About me section */}
       <Row>
         <Col>
-          <p>About me:</p>
+          <p className="mx-3">About me:</p>
           <p className="m-3">{profile?.content}</p>
         </Col>
       </Row>
