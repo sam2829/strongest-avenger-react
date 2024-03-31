@@ -102,6 +102,46 @@ function App() {
             path="/report/:id/"
             render={() => <CreateReportForm showAlert={showAlert} />}
           />
+          <Route
+            exact
+            path="/character_category/avenger/"
+            render={() => (
+              <PostsPage
+                message="No results found. Please adjust your search or follow a user."
+                filter={`character_category=Avenger&`}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/character_category/x-men/"
+            render={() => (
+              <PostsPage
+                message="No results found. Please adjust your search or follow a user."
+                filter={`character_category=X-Men&`}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/character_category/anti-hero/"
+            render={() => (
+              <PostsPage
+                message="No results found. Please adjust your search or follow a user."
+                filter={`character_category=Anti-Hero&`}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/character_category/villain/"
+            render={() => (
+              <PostsPage
+                message="No results found. Please adjust your search or follow a user."
+                filter={`character_category=Villain&`}
+              />
+            )}
+          />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>

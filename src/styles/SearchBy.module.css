@@ -16,4 +16,10 @@
 
 .SearchByLinks:hover {
   color: #ffac00;
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+}
+
+.ActiveLink {
+  color: #ffac00;
 }
