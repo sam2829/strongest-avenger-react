@@ -13,6 +13,7 @@ import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import SearchBy from "../../components/SearchBy";
 
 // Component to render the posts page
 const PostsPage = ({ message, filter = "" }) => {
@@ -68,12 +69,12 @@ const PostsPage = ({ message, filter = "" }) => {
   return (
     <>
       <Row>
-        <Col lg={{ span: 2 }} className="d-none d-lg-block">
-          <p>Search by desktop:</p>
+        <Col lg={{ span: 3 }} className="d-none d-lg-block">
+          <SearchBy />
         </Col>
-        <Col lg={{ span: 6, offset: 1 }}>
+        <Col lg={{ span: 6 }}>
           <PopularProfiles mobile />
-          <p>Search by mobiles</p>
+          <SearchBy mobile />
           {/* Search bar */}
           <i className={`fas fa-search ${styles.SearchIcon}`} />
           <Form
