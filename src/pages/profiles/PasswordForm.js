@@ -49,7 +49,7 @@ const PasswordForm = ({ showAlert }) => {
     event.preventDefault();
     try {
       await axiosRes.post("/dj-rest-auth/password/change/", passwordData);
-      showAlert("success", `You have successfully created a post`);
+      showAlert("success", `You have successfully changed your password.`);
       history.goBack();
     } catch (err) {
       console.log(err);
