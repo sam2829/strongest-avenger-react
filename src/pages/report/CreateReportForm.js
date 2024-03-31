@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Alert from "react-bootstrap/Alert";
+
 import logo from "../../assets/logo.png";
 
 import styles from "../../styles/CreateReportForm.module.css";
@@ -16,6 +16,7 @@ import btnStyles from "../../styles/Button.module.css";
 
 import { axiosReq } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import CreateReportFormFields from "./CreateReportFormFields";
 
 // Component to render the report form
 const CreateReportForm = ({ showAlert }) => {
@@ -29,7 +30,7 @@ const CreateReportForm = ({ showAlert }) => {
   const [reportData, setReportData] = useState({
     owner: currentUser.username,
     post: id,
-    reason: "",
+    reason: "spam",
     description: "",
   });
   const { reason, description } = reportData;
@@ -42,6 +43,7 @@ const CreateReportForm = ({ showAlert }) => {
     });
   };
 
+  // Handle submit of create report form
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -72,55 +74,18 @@ const CreateReportForm = ({ showAlert }) => {
           </Container>
         </Col>
       </Row>
+      {/*  create report form */}
       <Form onSubmit={handleSubmit} encType="multipart/form-data">
         <Row className="p-4 justify content center">
           <Col md={{ span: 10, offset: 1 }}>
             <Container className={styles.FormFields}>
-              {/* Form group for the reasoning field */}
-              <Form.Group>
-                <Form.Label>Reason</Form.Label>
-                <Form.Control
-                  as="select"
-                  name="reason"
-                  value={reason}
-                  onChange={handleChange}
-                  className={styles.ReportInput}
-                >
-                  {/* Options for reasons */}
-                  <option value="spam">Spam</option>
-                  <option value="harassment">Harassment</option>
-                  <option value="inappropriate_content">
-                    Inappropriate Content
-                  </option>
-                  <option value="character_in_wrong_category">
-                    Character In Wrong Category
-                  </option>
-                  <option value="other">Other</option>
-                </Form.Control>
-              </Form.Group>
-              {/* Display error messages for the reason field, if any */}
-              {errors?.reason?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              {/* Form group for the description field */}
-              <Form.Group>
-                <Form.Label>Description</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  name="description"
-                  value={description}
-                  onChange={handleChange}
-                  className={styles.ReportInput}
-                />
-              </Form.Group>
-              {/* Display error messages for the description field, if any */}
-              {errors?.description?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
+              {/* Create report form fields */}
+              <CreateReportFormFields
+                reason={reason}
+                description={description}
+                handleChange={handleChange}
+                errors={errors}
+              />
               {/* Buttons to save or cancel profile edit */}
               <Button
                 className={`${btnStyles.Button} ${styles.ReportButton}`}

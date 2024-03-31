@@ -90,7 +90,7 @@ const ProfileEditForm = ({ showAlert }) => {
         ...currentUser,
         profile_image: data.image,
       }));
-      showAlert("success", `You have successfully changed your profile`);
+      showAlert("success", `You have successfully updated your profile`);
       history.goBack();
     } catch (err) {
       console.log(err);
