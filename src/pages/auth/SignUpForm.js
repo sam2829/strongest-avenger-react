@@ -81,6 +81,7 @@ const SignUpForm = () => {
                   name="username"
                   value={username}
                   onChange={handleChange}
+                  maxLength={12}
                 />
               </Form.Group>
               {/* Displaying username errors, if any */}

@@ -89,6 +89,7 @@ const UsernameForm = ({ showAlert }) => {
                 value={username}
                 onChange={(event) => setUsername(event.target.value)}
                 className={styles.UsernameInput}
+                maxLength={12}
               />
             </Form.Group>
             {/* Displaying username errors, if any */}

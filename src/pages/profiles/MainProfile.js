@@ -34,7 +34,7 @@ const MainProfile = ({ profile }) => {
         </Col>
         {/* Profile owner and favorite character */}
         <Col lg={4}>
-          <h3 className="m-4">{profile?.owner}</h3>
+          <h5 className={`${styles.WordBreak} m-4`}>{profile?.owner}</h5>
           <h5 className="mt-4">Favourite Character:</h5>
           <h5 className={styles.FavCharacter}>
             {profile?.favourite_character}

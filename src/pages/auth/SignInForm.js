@@ -91,6 +91,7 @@ export class SignInForm extends Component {
                     name="username"
                     value={username}
                     onChange={this.handleChange}
+                    maxLength={12}
                   />
                 </Form.Group>
                 {/* Displaying username errors, if any */}
