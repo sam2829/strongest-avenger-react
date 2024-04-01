@@ -16,10 +16,13 @@ import btnStyles from "../../styles/Button.module.css";
 
 import { axiosReq } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/UseRedirect";
 import CreateReportFormFields from "./CreateReportFormFields";
 
 // Component to render the report form
 const CreateReportForm = ({ showAlert }) => {
+  // Redirect hook to redirect users is logged out
+  useRedirect("loggedOut");
   // handle errors on the post form
   const [errors, setErrors] = useState({});
   const history = useHistory();
@@ -28,7 +31,7 @@ const CreateReportForm = ({ showAlert }) => {
   const currentUser = useCurrentUser();
 
   const [reportData, setReportData] = useState({
-    owner: currentUser.username,
+    owner: currentUser ? currentUser.username : "",
     post: id,
     reason: "spam",
     description: "",

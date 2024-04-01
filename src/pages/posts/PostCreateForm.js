@@ -14,6 +14,7 @@ import PostCreateFormTextFields from "./PostCreateFormTextFields";
 
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/UseRedirect";
 import PostCreateFormImageField from "./PostCreateFormImageField";
 import PostCreateFormVideoField from "./PostCreateFormVideoField";
 import PostCreateFormRadioButtons from "./PostCreateFormRadioButtons";
@@ -22,6 +23,8 @@ import PostCreateFormRadioButtons from "./PostCreateFormRadioButtons";
 const PostCreateForm = ({ showAlert }) => {
   // handle errors on the post form
   const [errors, setErrors] = useState({});
+  // Redirect hook to redirect users is logged out
+  useRedirect("loggedOut");
 
   // The post data
   const [postData, setPostData] = useState({

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import appStyles from "../../App.module.css";
 import commentStyles from "../../styles/CommentCreateEditForm.module.css";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -14,6 +15,7 @@ import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import SearchBy from "../../components/SearchBy";
 
 // PostPage component displays a single post along with its comments
 const PostPage = () => {
@@ -34,6 +36,7 @@ const PostPage = () => {
           axiosReq.get(`/comments/?post=${id}`),
         ]);
         setPost({ results: [post] });
+        setLoading(false);
         setComments(comments);
       } catch (err) {
         console.log(err);
@@ -47,12 +50,19 @@ const PostPage = () => {
     <>
       <Row>
         <Col lg={{ span: 2 }} className="d-none d-lg-block">
-          <p>Search by desktop:</p>
+          <SearchBy />
         </Col>
         <Col lg={{ span: 6, offset: 1 }}>
           <PopularProfiles mobile />
-          <p>Search by mobiles</p>
-          <Post {...post.results[0]} setPosts={setPost} postPage />
+          <SearchBy mobile />
+          {loading && (
+            <Container className={appStyles.Content}>
+              <Asset spinner />
+            </Container>
+          )}
+          {!loading && (
+            <Post {...post.results[0]} setPosts={setPost} postPage />
+          )}
         </Col>
         <Col lg={{ span: 2, offset: 1 }} className="d-none d-lg-block">
           <PopularProfiles />

@@ -12,6 +12,7 @@ import Alert from "react-bootstrap/Alert";
 import logo from "../../assets/logo.png";
 import axios from "axios";
 import { useState } from "react";
+import { useRedirect } from "../../hooks/UseRedirect";
 
 // SignUpForm component for user sign up
 const SignUpForm = () => {
@@ -27,6 +28,8 @@ const SignUpForm = () => {
   const [errors, setErrors] = useState({});
 
   const history = useHistory();
+  // Redirect hook to redirect users is logged in
+  useRedirect("loggedIn");
 
   // Function so input fields display whats being typed
   const handleChange = (event) => {
