@@ -12,6 +12,7 @@ import Alert from "react-bootstrap/Alert";
 import logo from "../../assets/logo.png";
 import axios from "axios";
 import { SetCurrentUserContext } from "../../contexts/CurrentUserContext";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 // SignInForm component for user sign in
 export class SignInForm extends Component {
@@ -60,6 +61,10 @@ export class SignInForm extends Component {
   render() {
     const { signInData, errors } = this.state;
     const { username, password } = signInData;
+
+    if (this.props.setCurrentUser) {
+      return <Redirect to="/" />;
+    }
 
     return (
       <Container className={appStyles.Content}>
