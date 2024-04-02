@@ -67,7 +67,9 @@ function App() {
           <Route
             exact
             path="/signin"
-            render={() => <SignInForm showAlert={showAlert} />}
+            render={() => (
+              <SignInForm showAlert={showAlert} currentUser={currentUser} />
+            )}
           />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route

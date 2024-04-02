@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link, withRouter, Redirect } from "react-router-dom";
 import styles from "../../styles/SignUpInForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -11,8 +11,10 @@ import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import logo from "../../assets/logo.png";
 import axios from "axios";
-import { SetCurrentUserContext } from "../../contexts/CurrentUserContext";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import {
+  SetCurrentUserContext,
+  useCurrentUser,
+} from "../../contexts/CurrentUserContext";
 
 // SignInForm component for user sign in
 export class SignInForm extends Component {
@@ -61,11 +63,13 @@ export class SignInForm extends Component {
   render() {
     const { signInData, errors } = this.state;
     const { username, password } = signInData;
+    const { currentUser } = this.props;
 
-    if (this.props.setCurrentUser) {
+    // Check if currentUser exists
+    if (currentUser) {
+      // Redirect if user is logged in
       return <Redirect to="/" />;
     }
-
     return (
       <Container className={appStyles.Content}>
         <Row className={`${styles.Row} justify-content-center`}>
