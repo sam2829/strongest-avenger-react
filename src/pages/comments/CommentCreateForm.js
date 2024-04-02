@@ -73,7 +73,7 @@ const CommentCreateForm = ({
           </Link>
           {/* Input field for entering comment content */}
           <Form.Control
-            className={`${styles.textarea} ${styles.Form}`}
+            className={`${styles.textarea} ${styles.Form} mb-3`}
             placeholder="my comment..."
             as="textarea"
             value={content}
