@@ -13,6 +13,7 @@ import axios from "axios";
 import LoggedInNavIcons from "./LoggedInNavIcons";
 import LoggedOutNavIcons from "./LoggedOutNavIcons";
 import UseClickOutsideToggle from "../hooks/UseClickOutsideToggle";
+import { removeTokenTimestamp } from "../utils/utils";
 
 // Navabr component to display Navbar
 const NavBar = ({ showAlert }) => {
@@ -29,6 +30,7 @@ const NavBar = ({ showAlert }) => {
       await axios.post("dj-rest-auth/logout/");
       showAlert("success", "You have successfully signed out!");
       setCurrentUser(null);
+      removeTokenTimestamp();
     } catch (err) {
       console.log("Sign out failed:", err);
     }

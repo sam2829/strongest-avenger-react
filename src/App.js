@@ -17,6 +17,7 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import PasswordForm from "./pages/profiles/PasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import CreateReportForm from "./pages/report/CreateReportForm";
+import { setTokenTimestamp } from "./utils/utils";
 
 function App() {
   const { alert, showAlert, hideAlert } = useAlert();
@@ -68,7 +69,11 @@ function App() {
             exact
             path="/signin"
             render={() => (
-              <SignInForm showAlert={showAlert} currentUser={currentUser} />
+              <SignInForm
+                showAlert={showAlert}
+                currentUser={currentUser}
+                setTokenTimestamp={setTokenTimestamp}
+              />
             )}
           />
           <Route exact path="/signup" render={() => <SignUpForm />} />

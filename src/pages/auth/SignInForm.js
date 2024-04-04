@@ -46,6 +46,7 @@ export class SignInForm extends Component {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       this.props.setCurrentUser(data.user);
+      this.props.setTokenTimestamp(data);
       const { username } = signInData;
       this.props.showAlert(
         "success",
