@@ -18,6 +18,7 @@ import PasswordForm from "./pages/profiles/PasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import CreateReportForm from "./pages/report/CreateReportForm";
 import { setTokenTimestamp } from "./utils/utils";
+import NotFound from "./components/NotFound";
 
 function App() {
   const { alert, showAlert, hideAlert } = useAlert();
@@ -149,7 +150,7 @@ function App() {
               />
             )}
           />
-          <Route render={() => <p>Page not found!</p>} />
+          <Route render={() => <NotFound />} />
         </Switch>
       </Container>
     </div>
