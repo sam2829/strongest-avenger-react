@@ -54,7 +54,7 @@ const ProfileEditForm = ({ showAlert }) => {
           } = data;
           setProfileData({ name, favouriteCharacter, content, image });
         } catch (err) {
-          console.log(err);
+          // console.log(err);
           history.push("/");
         }
       } else {
@@ -93,7 +93,7 @@ const ProfileEditForm = ({ showAlert }) => {
       showAlert("success", `You have successfully updated your profile`);
       history.goBack();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setErrors(err.response?.data);
     }
   };

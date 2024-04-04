@@ -26,7 +26,7 @@ const PostLikeIcon = ({
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -44,7 +44,7 @@ const PostLikeIcon = ({
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

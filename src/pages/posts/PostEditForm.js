@@ -80,7 +80,7 @@ const PostEditForm = ({ showAlert }) => {
           history.push("/");
         }
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 
@@ -152,11 +152,11 @@ const PostEditForm = ({ showAlert }) => {
     } catch (err) {
       if (err.response && err.response.data) {
         // Display the error message received from the server
-        console.log("Server Error:", err.response.data);
+        // console.log("Server Error:", err.response.data);
         showAlert("danger", `There was an error with creating your post.`);
         setErrors(err.response.data);
       } else {
-        console.log("Network Error:", err.message);
+        // console.log("Network Error:", err.message);
       }
     }
   };

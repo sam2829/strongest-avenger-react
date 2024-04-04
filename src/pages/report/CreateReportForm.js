@@ -55,7 +55,7 @@ const CreateReportForm = ({ showAlert }) => {
       showAlert("success", "Report submitted successfully.");
       history.goBack();
     } catch (err) {
-      console.log("Server Error:", err.response.data);
+      // console.log("Server Error:", err.response.data);
       setErrors(err.response.data);
     }
   };

@@ -59,7 +59,7 @@ const CommentCreateForm = ({
       setErrors({});
     } catch (err) {
       setErrors(err.response.data);
-      console.log(err);
+      // console.log(err);
     }
   };
 

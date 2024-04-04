@@ -32,7 +32,7 @@ const NavBar = ({ showAlert }) => {
       setCurrentUser(null);
       removeTokenTimestamp();
     } catch (err) {
-      console.log("Sign out failed:", err);
+      // console.log("Sign out failed:", err);
     }
   };
 

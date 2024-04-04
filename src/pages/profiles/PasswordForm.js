@@ -52,7 +52,7 @@ const PasswordForm = ({ showAlert }) => {
       showAlert("success", `You have successfully changed your password.`);
       history.goBack();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setErrors(err.response?.data);
     }
   };
