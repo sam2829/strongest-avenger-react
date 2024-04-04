@@ -9,7 +9,7 @@ import Asset from "../../components/Asset";
 import appStyles from "../../App.module.css";
 
 import PopularProfiles from "./PopularProfiles";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
+
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import {
@@ -26,12 +26,11 @@ const ProfilePage = () => {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
   // Hooks
-  const currentUser = useCurrentUser();
+
   const { id } = useParams();
   const { setProfileData } = useSetProfileData();
   const { pageProfile } = useProfileData();
   const [profile] = pageProfile.results;
-  const is_owner = currentUser?.username === profile?.owner;
 
   // Fetch data on component mount
   useEffect(() => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Custom hook to handle click outside toggle functionality
 const UseClickOutsideToggle = () => {
