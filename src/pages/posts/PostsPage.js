@@ -14,6 +14,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 import SearchBy from "../../components/SearchBy";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 // Component to render the posts page
 const PostsPage = ({ message, filter = "" }) => {
@@ -21,6 +22,7 @@ const PostsPage = ({ message, filter = "" }) => {
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
   const [query, setQuery] = useState("");
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -42,7 +44,7 @@ const PostsPage = ({ message, filter = "" }) => {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, pathname]);
+  }, [filter, query, pathname, currentUser]);
 
   let postsContent;
   // Whilst loading, screen will display spinner
