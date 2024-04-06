@@ -417,6 +417,8 @@ This is a list of the navigation options on all pages:
 
 - Profile - Visible to logged in users.
 
+- Add a post - Visible to logged in users.
+
 The navigation menu is displayed on all pages and forms into a hamburger menu on smaller devices. This allows users to view the site from any device and not take up too much space on mobile devices. It's very clear and easy to use.
 
 The Icon of the Navlink which is the current page the user is on will also be a different colour so user can see which page they are on.
@@ -559,3 +561,56 @@ Mobile Feed Page:
 
 ![Mobile Liked page](docs/readme_screenshots/mobile-liked-page.png)
 
+***Add a post***
+
+Add a post page is a form the user must fill out correctly so that they can create their own post. This post can be an image or video.
+
+All fields must be filled out correctly or errors messages will be displayed to help the user.
+
+Add a post form:
+
+![Add a Post Form](docs/readme_screenshots/add-a-post-form.png)
+
+Add a post form with errors:
+
+![Add a Post Form Errors 1](docs/readme_screenshots/add-a-post-form-errors-1.png)
+
+![Add a Post Form Errors 2](docs/readme_screenshots/add-a-post-form-errors-2.png)
+
+***Main Post Page***
+
+Main post page displays the post as normal as in homepage, depending on whether user is logged in or logged out. But on this page the user is able to see if there are any comments to go with the post.
+
+If the User is logged in the are presented with the comment form so they can submit their own comment and say if the agree with the post.
+
+If there are no comments available a message will be on display.
+
+Main post page logged in:
+
+![Main Profile Page Logged in Comments](docs/readme_screenshots/main-profile-comments-logged-in.png)
+
+Main post page logged in (without existing comments):
+
+![Main Profile Page Logged in Without Comments](docs/readme_screenshots/main-profile-no-comments-logged-in.png)
+
+Main post page logged out:
+
+![Main Profile Page Logged out Comments](docs/readme_screenshots/main-profile-comments-logged-out.png)
+
+Main post page logged out (without existing comments):
+
+![Main Profile Page Logged out Without Comments](docs/readme_screenshots/main-profile-no-comments-logged-out.png)
+
+In the main profile page, if the user is the owner of the post, a three dot icon will appear at the top of the post and give the user the option of editing or deleting the post. The edi icon will render the edit form and delete wil delete the post and its comments.
+
+![Main Profile Owner Options](docs/readme_screenshots/main-profile-owner-options.png)
+
+If the user decides to edit the post, the edit form functions the same as the add a post form, but this time the form fields have the existing data already inside.
+
+![Post Edit Form](docs/readme_screenshots/post-edit-form.png)
+
+If the user has already commented, a three dot icon will appear at the top right of the comment and if clicked provides the options to edit the comment which renders the edit form or delete which will delete the users comment.
+
+If the user decides to edit their comment, the comment edit form functions the same as the comment form, but this time the form fields have the existing date already inside.
+
+![Comment Edit Form](docs/readme_screenshots/main-profile-comment-edit.png)
