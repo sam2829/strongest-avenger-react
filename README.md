@@ -674,3 +674,18 @@ Change password form:
 Change password form errors:
 
 ![Change Password Form](docs/readme_screenshots/change-password-form-errors.png)
+
+***Report***
+
+The report page allows the use to report anything they feel they need to on the post. Its also given a description section so they can elabirate and inform us if its the post or the comments that they have an issue with.
+
+The form must be filled out correctly to submit. Error message will be displayed to help the user fill out correctly.
+
+Report form:
+
+![Report Form](docs/readme_screenshots/report-form.png)
+
+Report form with errors:
+
+![Report Form Errors](docs/readme_screenshots/report-form-errors.png)
+
