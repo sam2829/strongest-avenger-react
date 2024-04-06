@@ -48,6 +48,7 @@ This repository is for the React front end of Strongest Avenger. The project als
     - [React Bootstrap](#react-bootstrap)
     - [Font Awesome](#fontawesome)
     - [Google Fonts](#google-fonts)
+  - [Testing](#testing)
 
 
 ## User Experience
@@ -873,5 +874,11 @@ Google fonts was used to provide the font for the site.
 ### Infinte Scroll
 
 Infintie Scroll was used so that the user is able to to keep scrolling through the posts or comments, rather than clicking between pages. Infinte scroll loads more data as it's scrolling.
+
+[Back to top](#strongest-avenger-react)
+
+## Testing
+
+I have included details of my testing during and post development in a separate file called [TESTING.md](TESTING.md)
 
 [Back to top](#strongest-avenger-react)
