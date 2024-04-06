@@ -37,6 +37,18 @@ This repository is for the React front end of Strongest Avenger. The project als
       - [Design](#design)
   - [Use of Components](#use-of-components)
   - [Custom Hooks](#custom-hooks)
+  - [Technologies Used](#technologies-used)
+    - [Languages Used](#languages-used)
+  - [Frameworks, Libraries and Dependencies](#frameworks-libraries-and-dependencies)
+    - [React](#react)
+    - [React-Router-DOM](#react-router-dom)
+    - [ReactDOM](#reactdom)
+    - [Axios](#axios)
+    - [JWT Decode](#jwt-decode)
+    - [React Bootstrap](#react-bootstrap)
+    - [Font Awesome](#fontawesome)
+    - [Google Fonts](#google-fonts)
+
 
 ## User Experience
 
@@ -808,4 +820,58 @@ This custom hook is used so that in mobile devices, if the navbar dropdown menu 
 
 This custom hook is used to redirect the users back to the homepage depending on conditions when the refresh token has expired or not and the user is logged in or out.
 
+[Back to top](#strongest-avenger-react)
 
+## Technologies Used
+
+### Languages Used
+
+- HTML5
+
+- JSX
+
+- CSS
+
+- Javascript
+
+[Back to top](#strongest-avenger-react)
+
+## Frameworks, Libraries and Dependencies
+
+### React
+
+React is the frontend framework used to create the frontend of this project.
+
+### React-Router-Dom
+
+React-Router-Dom is used to enable client side routing for React web applications and is used to implement basic routing across this project.
+
+### ReactDOM
+
+ReactDOM is used for rendering components to the DOM. It bridges the gap between React's Virtual DOM and the actual DOM in the browser.
+
+### Axios
+
+Axios was used to simplify requests made to the REST API.
+
+### JWT Decode
+
+JWT Decode was used to decode encoded JSON web tokens.
+
+### React Bootstrap
+
+React Bootstrap was used to help with the styling and layout of the entire project.
+
+### Fontawesome
+
+Font awesome was used for the icons used across the site.
+
+### Google fonts
+
+Google fonts was used to provide the font for the site.
+
+### Infinte Scroll
+
+Infintie Scroll was used so that the user is able to to keep scrolling through the posts or comments, rather than clicking between pages. Infinte scroll loads more data as it's scrolling.
+
+[Back to top](#strongest-avenger-react)
