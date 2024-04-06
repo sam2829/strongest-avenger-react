@@ -4,7 +4,7 @@
 
 Stongest Avenger React is designed so that the user is able to post images or videos of the favourite Marvel character or others being their favourite character and argue that they are the strongest. The User is able to view a list or posts from all other users. The user can register or login to their own account and be available then to make their own posts, comment on other posts, agree, follow other users, like other posts, update their own profile to tell abit about themselves and their favourite character.
 
-responvie image gooo here with deployed site linnk!!!
+![Am I Responsive Screenshot](docs/readme_screenshots/am-i-responsive.png)
 
 ## Project Goals
 
