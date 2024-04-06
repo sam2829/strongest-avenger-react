@@ -614,3 +614,63 @@ If the user has already commented, a three dot icon will appear at the top right
 If the user decides to edit their comment, the comment edit form functions the same as the comment form, but this time the form fields have the existing date already inside.
 
 ![Comment Edit Form](docs/readme_screenshots/main-profile-comment-edit.png)
+
+***Profile Page***
+
+When viewing the profile page of a user, the user is able to see all the posts of the user who's profile it is, but also see information about the user. If logged in there will also be a follow or unfollow button present so the user can either follow or unfollow the user who's profile it is.
+
+Desktop Profile page logged in:
+
+![Desktop Profile Page Logged in](docs/readme_screenshots/desktop-profile-page-logged-in.png)
+
+Mobile Profile page logged in:
+
+![Mobile Profile Page Logged in](docs/readme_screenshots/mobile-profile-page-logged-in.png)
+
+Desktop profile page logged out:
+
+![Desktop Profile Page Logged out](docs/readme_screenshots/desktop-profile-page-logged-out.png)
+
+Mobile profile page logged out:
+
+![Mobile Profile Page Logged out](docs/readme_screenshots/mobile-profile-page-logged-out.png)
+
+If the user is the owner of the profile page, a three dot icon will appear at the top right of the profile information. If clicked the user will be provided options to either edit profile, change username or change password.
+
+Depending on which one is clicked the user will be taken to the repsected form for the user to fill out correctly.
+
+The username and edit profile forms will display existing data if present.
+
+The form wil provide error messages to help the user fill out forms correctly.
+
+Desktop Profile edit options:
+
+![Desktop Profile Page Owner](docs/readme_screenshots/desktop-profile-page-owner.png)
+
+Mobile Profile edit options:
+
+![Mobile Profile Page Owner](docs/readme_screenshots/mobile-profile-page-owner.png)
+
+Profile edit form:
+
+![Profile Edit Form](docs/readme_screenshots/edit-profile-form.png)
+
+Profile edit form errors:
+
+![Profile Edit Form Errors](docs/readme_screenshots/edit-form-errors.png)
+
+Change username form:
+
+![Change Username Form](docs/readme_screenshots/change-username-form.png)
+
+Change username form errors:
+
+![Change Username Form Errors](docs/readme_screenshots/change-username-form-errors.png)
+
+Change password form:
+
+![Change Password Form](docs/readme_screenshots/change-password-form.png)
+
+Change password form errors:
+
+![Change Password Form](docs/readme_screenshots/change-password-form-errors.png)
