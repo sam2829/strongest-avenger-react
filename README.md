@@ -31,6 +31,8 @@ This repository is for the React front end of Strongest Avenger. The project als
       - [Database Schema](#database-schema)
       - [Security](#security)
     - [The Scope Plane](#the-scope-plane)
+    - [The Structure Plane](#the-structure-plane)
+      - [Features](#features)
 
 ## User Experience
 
@@ -387,7 +389,52 @@ I've also made sure in the front end using currentUser hook that user must be si
 
 [Back to top](#strongest-avenger-react)
 
-#### The Structure Plane
+### The Structure Plane
 
+#### Features
+
+As a User I would like to view the site on all my different devices so I can view site wherever I am.
+
+***Navbar***
+
+As a user I want to see a clear way of navigating around the site so that I can easily find the relative information I am looking for.
+
+The Navbar contains links for Home, My Sign in, Sign up, Feed, Liked, Profile, Add a post and Sign out. These options depend on whether or not the user is logged in.
+
+This is a list of the navigation options on all pages:
+
+- Home - Visible to all.
+
+- Sign in - Visible to logged out users.
+
+- Sign up - Visible to logged out users.
+
+- Feed - Visible to logged in users.
+
+- Liked - Visible to logged in users.
+
+- Sign out - Visible to logged in users.
+
+- Profile - Visible to logged in users.
+
+The navigation menu is displayed on all pages and forms into a hamburger menu on smaller devices. This allows users to view the site from any device and not take up too much space on mobile devices. It's very clear and easy to use.
+
+The Icon of the Navlink which is the current page the user is on will also be a different colour so user can see which page they are on.
+
+Desktop (logged in):
+
+![Desktop Navbar Logged in](docs/readme_screenshots/desktop-navbar-logged-in.png)
+
+Desktop (logged out):
+
+![Desktop Navbar Logged out](docs/readme_screenshots/desktop-navbar-logged-out.png)
+
+Mobile Device (logged in):
+
+![Mobile Navbar Logged in](docs/readme_screenshots/mobile-navbar-logged-in.png)
+
+Mobile Device (logged ou:t)
+
+![Mobile Navbar Logged out](docs/readme_screenshots/mobile-navbar-logged-out.png)
 
 
