@@ -35,6 +35,7 @@ This repository is for the React front end of Strongest Avenger. The project als
       - [Features](#features)
     - [The Surface Plane](#the-surface-plane)
       - [Design](#design)
+  - [Use of Components](#use-of-components)
 
 ## User Experience
 
@@ -722,4 +723,78 @@ Font awesome was used to for the sites icons.
 Google fonts was used for the font style.
 
 [Back to top](#strongest-avenger-react)
+
+## Use of Components
+
+A number of reusable React components were created with the intention of reducing code duplication.
+
+***AlertMessage.js***
+
+Used to show alert messages to inform user of different actions. This was passed as a prop so each alert when called can display it's own message. 
+
+***Asset.js***
+
+Used so that spinner, image or message can be displayed. These were passed as props so I was able to render a spinner when loading or an image an message to where was needed.
+
+***Avatar.js***
+
+Used so that the avatar can be passed as a prop and easily rendered where needed.
+
+***LoggedInNavIcons.js***
+
+Used to improve code readability and make it easier for futre changes or additions.
+
+***LoggedOutNavIcons.js***
+
+Used to improve code readability and make it easier for futre changes or additions.
+
+***MoreDropDown.js***
+
+Used so that the post and comment dropdown menu are the same and able to edit or delete post or comment. Handledelete and HandleEdit are passed as props so that they can be handled seperately. This also contains the drop down menu for the profile page.
+Having these in the own component let me re-use the code and enhanced code readability.
+
+***SearchBy.js***
+
+This was used on numerous pages so having this seperate improved code readability and makes it easier for future additions or changes.
+
+***CommentAgree.js***
+
+Used for when the user selects if the agree with the post or not. This is in the comment create and edit form so is seperated into it's own file to save repitition, improve readability and easier for future modifications.
+
+***PostCreateFormImageField.js***
+
+Used in both post create and edit post forms to upload an image. This was seperated into it's own file to to save repitition, improve readability and easier for future modifications.
+
+***PostCreateFormVideoField.js***
+
+Used in both post create and edit post forms to upload a video. This was seperated into it's own file to to save repitition, improve readability and easier for future modifications.
+
+***PostCreateFormRadioButtons.js***
+
+Used in both post create and edit post forms to select whether to post an image or a video. This was seperated into it's own file to to save repitition, improve readability and easier for future modifications.
+
+***PostCreateFormTextFields.js***
+
+Used in both post create and edit post forms to type in information about the post. This was seperated into it's own file to to save repitition, improve readability and easier for future modifications.
+
+***PostLikeIcon.js***
+
+Used so that user can like or unlike a post functionality. This was seperated into it's own file to improve code readabiltiy and for future additions or modifications.
+
+***ProfileEditFormImageField.js***
+
+Used so that user can edit their profile image. This was seperated into it's own file to improve code readabiltiy and for future additions or modifications.
+
+***ProfileEditFormTextFields.js***
+
+Used so that user can edit their profile information. This was seperated into it's own file to improve code readabiltiy and for future additions or modifications.
+
+***PopularProfiles***
+
+This is re-used across many pages, displaying the most popular profiles. This was seperated into it's own file to improve code readability, avoid code repitiion and make it easier for future additions or modifications.
+
+***CreateReportFormFields.js***
+
+Used so that user can provide information and create a report. This was seperated into it's own file to improve code readabiltiy and for future additions or modifications.
+
 
