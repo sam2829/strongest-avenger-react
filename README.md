@@ -36,6 +36,7 @@ This repository is for the React front end of Strongest Avenger. The project als
     - [The Surface Plane](#the-surface-plane)
       - [Design](#design)
   - [Use of Components](#use-of-components)
+  - [Custom Hooks](#custom-hooks)
 
 ## User Experience
 
@@ -796,5 +797,15 @@ This is re-used across many pages, displaying the most popular profiles. This wa
 ***CreateReportFormFields.js***
 
 Used so that user can provide information and create a report. This was seperated into it's own file to improve code readabiltiy and for future additions or modifications.
+
+## Custom Hooks
+
+***UseClickOutsideToggle.js***
+
+This custom hook is used so that in mobile devices, if the navbar dropdown menu has been toggled open, the user can click anywhere outside the dropdown menu and this will still toggle the dropdown menu closed.
+
+***UseRedirect.js***
+
+This custom hook is used to redirect the users back to the homepage depending on conditions when the refresh token has expired or not and the user is logged in or out.
 
 
