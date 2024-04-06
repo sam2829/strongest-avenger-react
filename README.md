@@ -516,3 +516,46 @@ Sign in form with errors:
 
 ![Sign In Form Errors](docs/readme_screenshots/signin-form-errors.png)
 
+***Posts on Homepage***
+
+The posts on the homepage display the posts whether its a video or image, provides information and about the post and also shows how many likes and comments the post has.
+
+If logged in I am able to like and unlike the the post. A report icon will also be on display for if i wish to report this post.
+
+If logged out user will be informed they must log in to like the post and the report icon will not be visible.
+
+If you click on the post or the comment icon, it will take to to the that posts page where you can see the list of comments.
+
+Post logged in:
+
+![Post Homepage Logged in](docs/readme_screenshots/posts-homepage-logged-in.png)
+
+Post logged out:
+
+![Post Homepage Logged out](docs/readme_screenshots/posts-homepage-logged-out.png)
+
+***Feed Page***
+
+Feed page is the same as the homepage but the posts on display are only the posts of the other users the logged in user is following.
+
+Desktop Feed page:
+
+![Desktop Feed page](docs/readme_screenshots/desktop-feed-page.png)
+
+Mobile Feed page:
+
+![Mobile Feed page](docs/readme_screenshots/mobile-feed-page.png)
+
+
+***Liked Page***
+
+Liked oage is the same as the homepage but the posts on display are only the posts the logged in user has liked.
+
+Desktop Liked page:
+
+![Desktop Liked page](docs/readme_screenshots/desktop-liked-page.png)
+
+Mobile Feed Page:
+
+![Mobile Liked page](docs/readme_screenshots/mobile-liked-page.png)
+
