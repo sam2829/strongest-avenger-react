@@ -437,4 +437,17 @@ Mobile Device (logged ou:t)
 
 ![Mobile Navbar Logged out](docs/readme_screenshots/mobile-navbar-logged-out.png)
 
+***Search By***
+
+Search by component is a pre defined search option which allows the user to search for posts by the character category. This appears on most pages and changes position on whether it is a desktop or mobile.
+
+If the user has used the search, the active link will change colour so the user is aware.
+
+Desktop:
+
+![Desktop Search by](docs/readme_screenshots/desktop-searchby.png)
+
+Mobile:
+
+![Mobile Search by](docs/readme_screenshots/mobile-searchby.png)
 
