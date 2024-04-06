@@ -689,3 +689,10 @@ Report form with errors:
 
 ![Report Form Errors](docs/readme_screenshots/report-form-errors.png)
 
+***Error Page***
+
+If the user attempts to go to a page that doesn't exist, they are presented with this error page and a link back to the homepage.
+
+![Error Page](docs/readme_screenshots/error-page.png)
+
+[Back to top](#strongest-avenger-react)
