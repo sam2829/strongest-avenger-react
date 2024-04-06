@@ -362,3 +362,32 @@ Change password form:
 </details>
 
 [Back to top](#strongest-avenger-react)
+
+#### Database Schema
+
+This is well explained in the backend repository readme [here](https://github.com/sam2829/strongest-avenger-drf)
+
+#### Security
+
+This is well explained in the backend repository readme [here](https://github.com/sam2829/strongest-avenger-drf)
+
+I've also made sure in the front end using currentUser hook that user must be signed in to access certain things and in certain actions, check that the current user is the owner of what the user is trying to access so that the users account is protected.
+
+### The Scope Plane
+
+- Responsive Design - The site should be fully functional on all devices from 320px wide and up.
+
+- Hamburger menu for navbar on mobile devices.
+
+- Ability to perform CRUD functionality on Profiles, Posts and comments.
+
+- Restriced role-based features for making posts, comments and profiles.
+
+- Homepage welcoming user to the site and links to navigate throught he site and otpions to sign in or sign up to an account.
+
+[Back to top](#strongest-avenger-react)
+
+#### The Structure Plane
+
+
+
