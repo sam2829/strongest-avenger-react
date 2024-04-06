@@ -33,6 +33,8 @@ This repository is for the React front end of Strongest Avenger. The project als
     - [The Scope Plane](#the-scope-plane)
     - [The Structure Plane](#the-structure-plane)
       - [Features](#features)
+    - [The Surface Plane](#the-surface-plane)
+      - [Design](#design)
 
 ## User Experience
 
@@ -696,3 +698,28 @@ If the user attempts to go to a page that doesn't exist, they are presented with
 ![Error Page](docs/readme_screenshots/error-page.png)
 
 [Back to top](#strongest-avenger-react)
+
+### The Surface Plane
+
+#### Design
+
+***Colour Scheme***
+
+I opted for a very few choices of colours throughout the site. The same colours have been implemented across the site and are included in the button's styles.
+
+This hopefully makes the site easy and clear to read / use.
+
+The colour palette was created using the coolors website.
+
+![Colour Scheme](docs/readme_screenshots/colour-scheme.png)
+
+***Imagery***
+
+The logo for the site was taken from google.
+
+Font awesome was used to for the sites icons.
+
+Google fonts was used for the font style.
+
+[Back to top](#strongest-avenger-react)
+
