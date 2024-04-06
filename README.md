@@ -451,3 +451,24 @@ Mobile:
 
 ![Mobile Search by](docs/readme_screenshots/mobile-searchby.png)
 
+***Popular Profiles***
+
+The popular profiles component displays to the user the most most followed profiles on the site. Clicking on the users profile takes you to view that users profile.
+
+If the user is logged in the popular profiles component will also display a follow button, which will allow the logged in user to now follow this user and see there posts in the feed page. If the user is logged in and is already following one of the popular profiles it will then display an unfollow button, if the user decides to unfollow this user.
+
+Desktop (logged in):
+
+![Desktop Popular Profiles Logged in](docs/readme_screenshots/desktop-popular-profiles-logged-in.png)
+
+Desktop (logged out):
+
+![Desktop Popluar Profiles Logged out](docs/readme_screenshots/desktop-popular-profiles-logged-out.png)
+
+Mobile (logged in):
+
+![Mobile Popular Profiles Logged in](docs/readme_screenshots/mobile-popular-profiles-logged-in.png)
+
+Mobile (logged out):
+
+![Mobile Popular Profiles Logged out](docs/readme_screenshots/mobile-popular-profiles-logged-out.png)
