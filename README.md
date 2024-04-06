@@ -472,3 +472,47 @@ Mobile (logged in):
 Mobile (logged out):
 
 ![Mobile Popular Profiles Logged out](docs/readme_screenshots/mobile-popular-profiles-logged-out.png)
+
+
+***Homepage***
+
+Users will be presented with the most recent posts. On this page the user can use the search bar to look for particular posts, use the search by options, see the most popular profiles and use the navbar to sign up or sign in.
+
+If already signed in the Navbar will be the Navbar for logged in users.
+
+Desktop:
+
+![Desktop Homepage](docs/readme_screenshots/desktop-homepage.png)
+
+Mobile:
+
+![Mobile Homepage](docs/readme_screenshots/mobile-homepage.png)
+
+***Sign up***
+
+The sign up page displays a sign up form which is for the user to complete correctly.
+
+The form must be filled out correctly or will be unsuccesful, error messages will be displayed as to why form is not correct.
+
+Sign up form no errors:
+
+![Sign Up Form](docs/readme_screenshots/signup-form.png)
+
+Sign up form with errors:
+
+![Sign Up Form Errors](docs/readme_screenshots/signup-form-errors.png)
+
+***Sign in***
+
+The sign in page displays the sing in form so that the user can sign back in if they already have an account.
+
+The form must be filled out correctly or will be unsuccesful, error messages will be displayed as to why form is not correct.
+
+Sign in form no errors:
+
+![Sign In Form](docs/readme_screenshots/signin-form.png)
+
+Sign in form with errors:
+
+![Sign In Form Errors](docs/readme_screenshots/signin-form-errors.png)
+
