@@ -129,8 +129,106 @@ Full test table:
 | Admin is able to view all posts, comments, profiles and reports. | As admin, the admin is able to view and find all posts comments, profiles and reports. | Logged in as admin. | I was able to find any post, comment, profile or report. | Pass |
 | Deal with reports. | As admin a list of all reports are on display in orders of reports not resolved. As admin I can then view the issues and correct them as I see fit through the admin panel. Once done I can change the report to resolved. | Made many reports and logged in as admin and attempted to resolve the issue. | Reports were in order of not resolved first and I was able to resolve the issue through the admin panel and mark report as resolved. | Pass |
 
+[Back to top](#strongest-avenger-react)
+
+## Validators
+
+### Lighthouse
+
+<details>
+
+<summary>Desktop</summary>
+
+Homepage:
+
+![Desktop Lighthouse Homepage](docs/readme_screenshots/desktop-lighthouse-homepage.png)
+
+Feed page:
+
+![Desktop Lighthouse Feed Page](docs/readme_screenshots/desktop-lighthouse-feed.png)
+
+Liked page:
+
+![Desktop Lighthouse Liked Page](docs/readme_screenshots/desktop-lighthouse-liked.png)
+
+Sign in page:
+
+![Desktop Lighthouse Sign In Page](docs/readme_screenshots/desktop-lighthouse-signin.png)
+
+Sign up page:
+
+![Desktop Lighthouse Sign Up Page](docs/readme_screenshots/desktop-lighthouse-signup.png)
+
+Profile page:
+
+![Desktop Lighthouse Profile Page](docs/readme_screenshots/desktop-lighthouse-profile.png)
+
+Full post page:
+
+![Desktop Lighthouse Full Post Page](docs/readme_screenshots/desktop-lighthouse-full-post.png)
+
+Create post page:
+
+![Desktop Lighthouse Create post Page](docs/readme_screenshots/desktop-lighthouse-create-post.png)
+
+Edit post page:
+
+![Desktop Edit Post Page](docs/readme_screenshots/desktop-lighthouse-edit-post.png)
+
+Report page:
+
+![Desktop Lighthouse Report Page](docs/readme_screenshots/desktop-lighthouse-report.png)
+
+</details>
+
+<details>
+
+<summary>Mobile</summary>
+
+Homepage:
+
+![Mobile Lighthouse Homepage](docs/readme_screenshots/mobile-lighthouse-homepage.png)
+
+Feed page:
+
+![Mobile Lighthouse Feed Page](docs/readme_screenshots/mobile-lighthouse-feed.png)
+
+Liked page:
+
+![Mobile Lighthouse Liked Page](docs/readme_screenshots/mobile-lighthouse-liked.png)
+
+Sign in page:
+
+![Mobile Lighthouse Sign In Page](docs/readme_screenshots/mobile-lighthouse-signin.png)
+
+Sign up page:
+
+![Mobile Lighthouse Sign Up Page](docs/readme_screenshots/mobile-lighthouse-signup.png)
+
+Profile page:
+
+![Mobile Lighthouse Profile Page](docs/readme_screenshots/mobile-lighthouse-profile.png)
+
+Full post page:
+
+![Mobile Lighthouse Full Post Page](docs/readme_screenshots/mobile-lighthouse-full-post.png)
+
+Create post page:
+
+![Mobile Lighthouse Create post Page](docs/readme_screenshots/mobile-lighthouse-create-post.png)
+
+Edit post page:
+
+![Mobile Edit Post Page](docs/readme_screenshots/mobile-lighthouse-edit-post.png)
 
 
+Report page:
+
+![Mobile Lighthouse Report Page](docs/readme_screenshots/mobile-lighthouse-report.png)
+
+</details>
+
+[Back to top](#strongest-avenger-react)
 
 
 
