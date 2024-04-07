@@ -230,6 +230,15 @@ Report page:
 
 [Back to top](#strongest-avenger-react)
 
+### ESLint Javascript
+
+### W3C CSS Validator
+
+W3C CSS Validator was used to validate the site's CSS code. All style pages return with no errors found:
+
+![W3C CSS Validator](docs/readme_screenshots/css-validator.png)
+
+Only warnings that were present were where ive styled the scroll bar in the App.module.css file and this wasn't deemed an issue.
 
 
 
