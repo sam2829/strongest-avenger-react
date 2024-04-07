@@ -232,6 +232,11 @@ Report page:
 
 ### ESLint Javascript
 
+Most of the code validation was done through the gitpod ide problems tab and with the help of the prettier code formatting extension.
+
+[Back to top](#strongest-avenger-react)
+
+
 ### W3C CSS Validator
 
 W3C CSS Validator was used to validate the site's CSS code. All style pages return with no errors found:
@@ -239,6 +244,46 @@ W3C CSS Validator was used to validate the site's CSS code. All style pages retu
 ![W3C CSS Validator](docs/readme_screenshots/css-validator.png)
 
 Only warnings that were present were where ive styled the scroll bar in the App.module.css file and this wasn't deemed an issue.
+
+[Back to top](#strongest-avenger-react)
+
+## Responsiveness
+
+All pages were tested to ensure responsiveness on screen sizes from 320px and upwards. The site was also tested on multiple browsers and devices.
+
+Browser test table:
+
+| Browser Tested | Acutal Result | Pass / Fail |
+| --- | --- | --- |
+| Chrome | As Expected | Pass |
+| Firefox | As Expected | Pass |
+| Edge | As Expected | Pass |
+|Samsung | As Expected | Pass |
+
+Devices tested and devices using google tools:
+
+| Device Tested | Acutal Result | Pass / Fail |
+| --- | --- | --- |
+| Acer Laptop | As expected | Pass |
+| Samsung 22 inch Screen | As expected | Pass |
+| i Phone SE | As expected | Pass |
+| i Phone XR | As expected | Pass |
+| i Phone 12 Pro | As expected | Pass |
+| i Phone 14 Pro Max | As expected | Pass |
+| Pixel 7 | As expected | Pass |
+| Samsung Galaxy S8 | As expected | Pass |
+| Samsung S20 Ultra | As expected | Pass |
+| iPad Mini | As expected | Pass |
+| iPad Air | As expected | Pass |
+| iPad Pro | As expected | Pass |
+| Surface Pro 7 | As expected | Pass |
+| Surface Duo | As expected | Pass |
+| Galaxy Fold | As expected | Pass |
+| Samsung Galaxy A51/71 | As expected | Pass |
+| Nest Hub | As expected | Pass |
+| Nest Hub Max | As expected | Pass |
+
+[Back to top](#strongest-avenger-react)
 
 
 
