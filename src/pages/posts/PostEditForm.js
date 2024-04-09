@@ -22,6 +22,8 @@ import PostCreateFormRadioButtons from "./PostCreateFormRadioButtons";
 const PostEditForm = ({ showAlert }) => {
   // handle errors on the post form
   const [errors, setErrors] = useState({});
+   
+
 
   // The post data
   const [postData, setPostData] = useState({

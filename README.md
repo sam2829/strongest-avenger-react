@@ -49,6 +49,8 @@ This repository is for the React front end of Strongest Avenger. The project als
     - [Font Awesome](#fontawesome)
     - [Google Fonts](#google-fonts)
   - [Testing](#testing)
+  - [Deployment](#deployment)
+
 
 
 ## User Experience
@@ -882,3 +884,119 @@ Infintie Scroll was used so that the user is able to to keep scrolling through t
 I have included details of my testing during and post development in a separate file called [TESTING.md](TESTING.md)
 
 [Back to top](#strongest-avenger-react)
+
+## Deployment
+
+***GitHub***
+
+This project was developed using a blank template and ran in Gitpod workspace.
+
+- First I created a new Github repository by clicking on the create new repository button in the top right of my repositories list, on the left hand side of the page.
+
+-  There I created the repository name, made sure the repository was set to public and then clicked the create repository at the bottom of the page.
+
+- Once the repository was created, in the top right of the file clickon the green drop-down meu labelled "code".
+
+- Then select HTTPS.
+
+- Next copy the URL given to you.
+
+- Next I loaded up Gitpod and clicked on the "Dashboard" at the top right of the page.
+
+- Next, I clicked on "new workspace" on the right hand side of the page.
+
+- In the repository URL, paste in the URL copied from the GitHub account.
+
+- Next clicked on the repository in the drop down menu.
+
+- Next, once the repository was selected I clicked continue and the workspace was now loading.
+
+***Version Control***
+
+For version control the following steps were made:
+
+- If any changes were made to my Gitpod project.
+
+- First files were made ready for commit with command - git add filename or git add . to add all files.
+
+- To commit the changes using the following command - git commit -m "This is my commit" Note the brief description at the end of the command to make you aware of what changes have occurred.
+
+- To then move the changes to GitHub, use the following command - git push
+
+***Clone Repo***
+
+Creating a clone allows you to make a copy of the repository at the specific point in time. This lets you run a copy of the project locally. This can be done by:
+
+- Navigate to the repository you choose to clone in your GitHub.
+
+- Clicking on the arrow of the green button named "Code" at the top of the file.
+
+- Then select "Local" then under local select "HTTPS" and then copy that URL.
+
+- Navigate to your code editor and within the terminal change the directory to the location you wish to clone the repository to.
+
+- Type "git clone" and paste the copied HTTPS link from GitHub.
+
+- Press enter and git will clone the repository to your local machine.
+
+***Forking the GitHub Repository***
+
+Forking the GitHub repository allows you to make a copy of the original repository on your GitHub account to view and make changes without it effecting the original repository. This can be done by:
+
+- Log in to your GitHub account and locate the repository you wish to fork.
+
+- Near the top of the page, under the "settings" button going across the page, you should see a button saying "Fork".
+
+- Click the "Fork" button and you should now have a copy of the original repository in your GitHub account.
+
+***Deployment to Heroku***
+
+For initial deployment to Heroku at the start of my project, the following steps were made:
+
+- First sign in to your Heroku account.
+
+- On the top right of the page there is a drop-down menu called "new", click this and click on "create new app".
+
+- You then need to decide your unique app name using '-' between each word. Then select which region you are working from and then click on the button "create app".
+
+- Once you have clicked on "create app" you will be taken to a new page. On this page you will see a row of tabs at the top left of the page. You need to click on the "deploy" tab and go to the deployment page.
+
+- On the deployment page, I scrolled down to deployment method and confirmed I wanted to deploy through GitHub.
+
+- When I click on GitHub a search bar will appear underneath which will allow me to search for my GitHub repository. I made sure I spelt the repository I'm searching for exactly as I named it and then clicked the search button.
+
+- The repository then appeared underneath my search, I checked this was the correct repository and then clicked the "connect" button. This has now linked up my Heroku app and my GitHub repository code.
+
+- I then scrolled down to the button "Enable Automatic Deploys", this allows my Heroku app to automatically update every time I've pushed a new change to my code to GitHub. This is optional.
+
+- I then scrolled down and clicked on the button "Deploy Branch" which is now building the app.
+
+- Once the app is successfully deployed, a message appeared saying "your app was successfully deployed." Then click on the "view" button which will take me to the deployed link.
+
+***Deployment Combining Django Rest and React Projects***
+
+At the end of the project I decided to combine my backend and frontend projects into one. The following steps were made to make this possible:
+
+- First go to the GitHub repository of the react project, click the "code" button at the top right of the file, select HTTPS and copy the URL.
+
+- Next open up the Django Rest project workspace, then in the terminal type the following command "git clone <react_repo_url> frontend" but replace the "<react_repo_url>" with the URL you copied in the react GitHub repository.
+
+- This created a new folder called frontend in the Django Rest workspace. Then needed to remove the .git .gitignore and the README.md filed from this folder. This was carried out by running the following command in the terminal "rm -rf .git .gitignore README.md".
+
+- Then installed npm into this project with command "npm install".
+
+- Whitenoise then must be installed for static files in deployment. This was done by the following command "pip3 install whitenoise==6.4.0". Then create a new empty folder called staticfiles by the following command "mkdir staticfiles".
+
+- In the root directory of the project create a new file named runtime.txt and inside add the correct version of python.
+
+- Make sure all changes are commited and pushed to GitHub.
+
+- Next log into your Heroku account.
+
+- Load the Heroku app for my Django Rest project.
+
+- Once loaded, on this page you will see a row of tabs at the top left of the page. You first need to click on the "settings" tab and go to the settings page.
+
+- Here, click on "reveal config vars", then a table should drop down revealing all the current convig vars. Make sure that you have config vars added which are "ALLOWED_HOST" set to the URL of your combined project, remove the https:// at the beginning and remove the trailing slash at the end and must also have config var "CLIENT_ORIGIN" and set it to the URL of your combined project. This time keep the https:// at the beginning but remove the trailing slash at the end.
+
+- Return back to the deployment page, scroll down and click on deploy to deploy the app. 
