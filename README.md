@@ -1026,5 +1026,9 @@ At the end of the project I decided to combine my backend and frontend projects 
 
 - Mentor Jubril - For helping me realise what's needed to build a good project and also for encouragement and understanding.
 
+- Google Fonts - For supplying the fonts used.
+
+- Font Awesome-  For Providing the icons used through out this project.
+
 [Back to top](#strongest-avenger-react)
 
