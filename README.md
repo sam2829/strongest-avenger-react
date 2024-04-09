@@ -48,8 +48,11 @@ This repository is for the React front end of Strongest Avenger. The project als
     - [React Bootstrap](#react-bootstrap)
     - [Font Awesome](#fontawesome)
     - [Google Fonts](#google-fonts)
+    - [Infinite Scroll](#infinte-scroll)
+    - [Prettier](#prettier)
   - [Testing](#testing)
   - [Deployment](#deployment)
+  - [Credits](#credits)
 
 
 
@@ -877,6 +880,10 @@ Google fonts was used to provide the font for the site.
 
 Infintie Scroll was used so that the user is able to to keep scrolling through the posts or comments, rather than clicking between pages. Infinte scroll loads more data as it's scrolling.
 
+### Prettier
+
+Prettier is used as code formatting tool which helped me structure my code in the correct way.
+
 [Back to top](#strongest-avenger-react)
 
 ## Testing
@@ -999,4 +1006,25 @@ At the end of the project I decided to combine my backend and frontend projects 
 
 - Here, click on "reveal config vars", then a table should drop down revealing all the current convig vars. Make sure that you have config vars added which are "ALLOWED_HOST" set to the URL of your combined project, remove the https:// at the beginning and remove the trailing slash at the end and must also have config var "CLIENT_ORIGIN" and set it to the URL of your combined project. This time keep the https:// at the beginning but remove the trailing slash at the end.
 
-- Return back to the deployment page, scroll down and click on deploy to deploy the app. 
+- Return back to the deployment page, scroll down and click on deploy to deploy the app.
+
+[Back to top](#strongest-avenger-react)
+
+## Credits
+
+- Code Institute - Without the knowledge gained through out doing the course I would not have been able to build this project. The tutor support was also very helpful.
+
+- Slack - The slack community help me search for any issues I came across and build this project.
+
+- React Framework - React Framework - For being able to use React Framework to build my project and all the documentation to help build and set up correctly.
+
+- Cloudinary - For storing the data for my posts.
+
+- StackOverflow - For helping give me an ideas on how to oversome issues I encountered.
+
+- Google - For use of all images and logo in the project.
+
+- Mentor Jubril - For helping me realise what's needed to build a good project and also for encouragement and understanding.
+
+[Back to top](#strongest-avenger-react)
+
