@@ -2,7 +2,7 @@
 
 ## Overview
 
-Stongest Avenger React is designed so that the user is able to post images or videos of the favourite Marvel character or others being their favourite character and argue that they are the strongest. The User is able to view a list or posts from all other users. The user can register or login to their own account and be available then to make their own posts, comment on other posts, agree, follow other users, like other posts, update their own profile to tell abit about themselves and their favourite character.
+Strongest Avenger React is designed so that the user is able to post images or videos of the favourite Marvel character or others being their favourite character and argue that they are the strongest. The User is able to view a list or posts from all other users. The user can register or login to their own account and be available then to make their own posts, comment on other posts, agree, follow other users, like other posts, update their own profile to tell a bit about themselves and their favourite character.
 
 ![Am I Responsive Screenshot](docs/readme_screenshots/am-i-responsive.png)
 
@@ -60,7 +60,7 @@ This repository is for the React front end of Strongest Avenger. The project als
 
 ### The Strategy Plane
 
-Strongest Avenger is intended for people to have somewhere where they can share their favourite Marvel moments and characters with others who have the same interest. They can also share moments where they have had fun being superhero's themselves and have interaction with each other on whether they agree that the character is infact the strongest. The user will be able to manage their own posts and profile and be able to comment and like on others, whilst also being able to search for specific or relative posts and follow other users.
+Strongest Avenger is intended for people to have somewhere where they can share their favourite Marvel moments and characters with others who have the same interest. They can also share moments where they have had fun being superhero's themselves and have interaction with each other on whether they agree that the character is in fact the strongest. The user will be able to manage their own posts and profile and be able to comment and like on others, whilst also being able to search for specific or relative posts and follow other users.
 
 #### The Ideal User
 
@@ -72,14 +72,14 @@ Strongest Avenger is intended for people to have somewhere where they can share 
 #### Site Goals
 
 - To provide the user with the ability to register an account.
-- To stop user from making posts, comments, likes and following others wihtout registering an account.
+- To stop user from making posts, comments, likes and following others without registering an account.
 - To provide users with posts from many different people and characters.
 - To provide users to interact with others.
 
 #### First Time Visitor Goals
 
 - To provide the user the ability to register an account.
-- To stop user from making posts, comments, likes and following others wihtout registering an account.
+- To stop user from making posts, comments, likes and following others without registering an account.
 - Allow the user to see many posts from different people of their favourite character.
 - See comments from other users on posts.
 - Once registered and account and signed in, user can make their own posts, comment on other posts, update their own profile, like posts, follow other users and report any issues on a post.
@@ -119,7 +119,7 @@ The following user stories were completed throughout the development.
 
 Navbar navigation:
 
-  - As a User I can clearlyview the navbar from every page so that I can easily navigate betweem pages.
+  - As a User I can clearly view the navbar from every page so that I can easily navigate between pages.
 
 Routing:
 
@@ -179,7 +179,7 @@ Search by categories:
 
 View liked posts:
 
-  - As a logged in user I can view the posts Ive liked so that I can revisit the posts I've liked the most.
+  - As a logged in user I can view the posts I've liked so that I can revisit the posts I've liked the most.
 
 View posts of followed users:
 
@@ -405,9 +405,9 @@ I've also made sure in the front end using currentUser hook that user must be si
 
 - Ability to perform CRUD functionality on Profiles, Posts and comments.
 
-- Restriced role-based features for making posts, comments and profiles.
+- Restricted role-based features for making posts, comments and profiles.
 
-- Homepage welcoming user to the site and links to navigate throught he site and otpions to sign in or sign up to an account.
+- Homepage welcoming user to the site and links to navigate through he site and options to sign in or sign up to an account.
 
 [Back to top](#strongest-avenger-react)
 
@@ -457,7 +457,7 @@ Mobile Device (logged in):
 
 ![Mobile Navbar Logged in](docs/readme_screenshots/mobile-navbar-logged-in.png)
 
-Mobile Device (logged ou:t)
+Mobile Device (logged out)
 
 ![Mobile Navbar Logged out](docs/readme_screenshots/mobile-navbar-logged-out.png)
 
@@ -477,7 +477,7 @@ Mobile:
 
 ***Popular Profiles***
 
-The popular profiles component displays to the user the most most followed profiles on the site. Clicking on the users profile takes you to view that users profile.
+The popular profiles component displays to the user the most followed profiles on the site. Clicking on the users profile takes you to view that users profile.
 
 If the user is logged in the popular profiles component will also display a follow button, which will allow the logged in user to now follow this user and see there posts in the feed page. If the user is logged in and is already following one of the popular profiles it will then display an unfollow button, if the user decides to unfollow this user.
 
@@ -516,7 +516,7 @@ Mobile:
 
 The sign up page displays a sign up form which is for the user to complete correctly.
 
-The form must be filled out correctly or will be unsuccesful, error messages will be displayed as to why form is not correct.
+The form must be filled out correctly or will be unsuccessful, error messages will be displayed as to why form is not correct.
 
 Sign up form no errors:
 
@@ -530,7 +530,7 @@ Sign up form with errors:
 
 The sign in page displays the sing in form so that the user can sign back in if they already have an account.
 
-The form must be filled out correctly or will be unsuccesful, error messages will be displayed as to why form is not correct.
+The form must be filled out correctly or will be unsuccessful, error messages will be displayed as to why form is not correct.
 
 Sign in form no errors:
 
@@ -544,11 +544,11 @@ Sign in form with errors:
 
 The posts on the homepage display the posts whether its a video or image, provides information and about the post and also shows how many likes and comments the post has.
 
-If logged in I am able to like and unlike the the post. A report icon will also be on display for if i wish to report this post.
+If logged in I am able to like and unlike the post. A report icon will also be on display for if I wish to report this post.
 
 If logged out user will be informed they must log in to like the post and the report icon will not be visible.
 
-If you click on the post or the comment icon, it will take to to the that posts page where you can see the list of comments.
+If you click on the post or the comment icon, it will take to the that posts page where you can see the list of comments.
 
 Post logged in:
 
@@ -573,7 +573,7 @@ Mobile Feed page:
 
 ***Liked Page***
 
-Liked oage is the same as the homepage but the posts on display are only the posts the logged in user has liked.
+Liked page is the same as the homepage but the posts on display are only the posts the logged in user has liked.
 
 Desktop Liked page:
 
@@ -623,7 +623,7 @@ Main post page logged out (without existing comments):
 
 ![Main Profile Page Logged out Without Comments](docs/readme_screenshots/main-profile-no-comments-logged-out.png)
 
-In the main profile page, if the user is the owner of the post, a three dot icon will appear at the top of the post and give the user the option of editing or deleting the post. The edi icon will render the edit form and delete wil delete the post and its comments.
+In the main profile page, if the user is the owner of the post, a three dot icon will appear at the top of the post and give the user the option of editing or deleting the post. The edit icon will render the edit form and delete will delete the post and its comments.
 
 ![Main Profile Owner Options](docs/readme_screenshots/main-profile-owner-options.png)
 
@@ -659,11 +659,11 @@ Mobile profile page logged out:
 
 If the user is the owner of the profile page, a three dot icon will appear at the top right of the profile information. If clicked the user will be provided options to either edit profile, change username or change password.
 
-Depending on which one is clicked the user will be taken to the repsected form for the user to fill out correctly.
+Depending on which one is clicked the user will be taken to the respected form for the user to fill out correctly.
 
 The username and edit profile forms will display existing data if present.
 
-The form wil provide error messages to help the user fill out forms correctly.
+The form will provide error messages to help the user fill out forms correctly.
 
 Desktop Profile edit options:
 
@@ -699,7 +699,7 @@ Change password form errors:
 
 ***Report***
 
-The report page allows the use to report anything they feel they need to on the post. Its also given a description section so they can elabirate and inform us if its the post or the comments that they have an issue with.
+The report page allows the use to report anything they feel they need to on the post. Its also given a description section so they can elaborate and inform us if its the post or the comments that they have an issue with.
 
 The form must be filled out correctly to submit. Error message will be displayed to help the user fill out correctly.
 
@@ -761,60 +761,60 @@ Used so that the avatar can be passed as a prop and easily rendered where needed
 
 ***LoggedInNavIcons.js***
 
-Used to improve code readability and make it easier for futre changes or additions.
+Used to improve code readability and make it easier for future changes or additions.
 
 ***LoggedOutNavIcons.js***
 
-Used to improve code readability and make it easier for futre changes or additions.
+Used to improve code readability and make it easier for future changes or additions.
 
 ***MoreDropDown.js***
 
-Used so that the post and comment dropdown menu are the same and able to edit or delete post or comment. Handledelete and HandleEdit are passed as props so that they can be handled seperately. This also contains the drop down menu for the profile page.
+Used so that the post and comment dropdown menu are the same and able to edit or delete post or comment. Handle delete and Handle Edit are passed as props so that they can be handled separately. This also contains the drop down menu for the profile page.
 Having these in the own component let me re-use the code and enhanced code readability.
 
 ***SearchBy.js***
 
-This was used on numerous pages so having this seperate improved code readability and makes it easier for future additions or changes.
+This was used on numerous pages so having this separate improved code readability and makes it easier for future additions or changes.
 
 ***CommentAgree.js***
 
-Used for when the user selects if the agree with the post or not. This is in the comment create and edit form so is seperated into it's own file to save repitition, improve readability and easier for future modifications.
+Used for when the user selects if the agree with the post or not. This is in the comment create and edit form so is separated into its own file to save repetition, improve readability and easier for future modifications.
 
 ***PostCreateFormImageField.js***
 
-Used in both post create and edit post forms to upload an image. This was seperated into it's own file to to save repitition, improve readability and easier for future modifications.
+Used in both post create and edit post forms to upload an image. This was separated into its own file to save repetition, improve readability and easier for future modifications.
 
 ***PostCreateFormVideoField.js***
 
-Used in both post create and edit post forms to upload a video. This was seperated into it's own file to to save repitition, improve readability and easier for future modifications.
+Used in both post create and edit post forms to upload a video. This was separated into its own file to save repetition, improve readability and easier for future modifications.
 
 ***PostCreateFormRadioButtons.js***
 
-Used in both post create and edit post forms to select whether to post an image or a video. This was seperated into it's own file to to save repitition, improve readability and easier for future modifications.
+Used in both post create and edit post forms to select whether to post an image or a video. This was separated into its own file to save repetition, improve readability and easier for future modifications.
 
 ***PostCreateFormTextFields.js***
 
-Used in both post create and edit post forms to type in information about the post. This was seperated into it's own file to to save repitition, improve readability and easier for future modifications.
+Used in both post create and edit post forms to type in information about the post. This was separated into its own file to save repetition, improve readability and easier for future modifications.
 
 ***PostLikeIcon.js***
 
-Used so that user can like or unlike a post functionality. This was seperated into it's own file to improve code readabiltiy and for future additions or modifications.
+Used so that user can like or unlike a post functionality. This was separated into its own file to improve code readability and for future additions or modifications.
 
 ***ProfileEditFormImageField.js***
 
-Used so that user can edit their profile image. This was seperated into it's own file to improve code readabiltiy and for future additions or modifications.
+Used so that user can edit their profile image. This was separated into its own file to improve code readability and for future additions or modifications.
 
 ***ProfileEditFormTextFields.js***
 
-Used so that user can edit their profile information. This was seperated into it's own file to improve code readabiltiy and for future additions or modifications.
+Used so that user can edit their profile information. This was separated into its own file to improve code readability and for future additions or modifications.
 
-***PopularProfiles***
+***PopularProfiles.js***
 
-This is re-used across many pages, displaying the most popular profiles. This was seperated into it's own file to improve code readability, avoid code repitiion and make it easier for future additions or modifications.
+This is re-used across many pages, displaying the most popular profiles. This was separated into its own file to improve code readability, avoid code repetiion and make it easier for future additions or modifications.
 
 ***CreateReportFormFields.js***
 
-Used so that user can provide information and create a report. This was seperated into it's own file to improve code readabiltiy and for future additions or modifications.
+Used so that user can provide information and create a report. This was separated into its own file to improve code readability and for future additions or modifications.
 
 ## Custom Hooks
 
@@ -838,7 +838,7 @@ This custom hook is used to redirect the users back to the homepage depending on
 
 - CSS
 
-- Javascript
+- JavaScript
 
 [Back to top](#strongest-avenger-react)
 
@@ -854,7 +854,7 @@ React-Router-Dom is used to enable client side routing for React web application
 
 ### ReactDOM
 
-ReactDOM is used for rendering components to the DOM. It bridges the gap between React's Virtual DOM and the actual DOM in the browser.
+ReactDOM is used for rendering components to the DOM. It bridges the gap between Reacts Virtual DOM and the actual DOM in the browser.
 
 ### Axios
 
@@ -868,7 +868,7 @@ JWT Decode was used to decode encoded JSON web tokens.
 
 React Bootstrap was used to help with the styling and layout of the entire project.
 
-### Fontawesome
+### Font Awesome
 
 Font awesome was used for the icons used across the site.
 
@@ -876,9 +876,9 @@ Font awesome was used for the icons used across the site.
 
 Google fonts was used to provide the font for the site.
 
-### Infinte Scroll
+### Infinite Scroll
 
-Infintie Scroll was used so that the user is able to to keep scrolling through the posts or comments, rather than clicking between pages. Infinte scroll loads more data as it's scrolling.
+Infinite Scroll was used so that the user is able to keep scrolling through the posts or comments, rather than clicking between pages. Infinite scroll loads more data as it's scrolling.
 
 ### Prettier
 
@@ -898,11 +898,11 @@ I have included details of my testing during and post development in a separate 
 
 This project was developed using a blank template and ran in Gitpod workspace.
 
-- First I created a new Github repository by clicking on the create new repository button in the top right of my repositories list, on the left hand side of the page.
+- First I created a new GitHub repository by clicking on the create new repository button in the top right of my repositories list, on the left hand side of the page.
 
 -  There I created the repository name, made sure the repository was set to public and then clicked the create repository at the bottom of the page.
 
-- Once the repository was created, in the top right of the file clickon the green drop-down meu labelled "code".
+- Once the repository was created, in the top right of the file click on the green drop-down meu labelled "code".
 
 - Then select HTTPS.
 
@@ -996,7 +996,7 @@ At the end of the project I decided to combine my backend and frontend projects 
 
 - In the root directory of the project create a new file named runtime.txt and inside add the correct version of python.
 
-- Make sure all changes are commited and pushed to GitHub.
+- Make sure all changes are committed and pushed to GitHub.
 
 - Next log into your Heroku account.
 
@@ -1020,7 +1020,7 @@ At the end of the project I decided to combine my backend and frontend projects 
 
 - Cloudinary - For storing the data for my posts.
 
-- StackOverflow - For helping give me an ideas on how to oversome issues I encountered.
+- StackOverflow - For helping give me an ideas on how to overcome issues I encountered.
 
 - Google - For use of all images and logo in the project.
 
