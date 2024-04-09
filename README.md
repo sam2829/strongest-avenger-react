@@ -810,7 +810,7 @@ Used so that user can edit their profile information. This was separated into it
 
 ***PopularProfiles.js***
 
-This is re-used across many pages, displaying the most popular profiles. This was separated into its own file to improve code readability, avoid code repetiion and make it easier for future additions or modifications.
+This is re-used across many pages, displaying the most popular profiles. This was separated into its own file to improve code readability, avoid code repetition and make it easier for future additions or modifications.
 
 ***CreateReportFormFields.js***
 
