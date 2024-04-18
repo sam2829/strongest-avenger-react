@@ -167,7 +167,7 @@ Like a post:
 
 View most recent posts:
 
-  - As a User I can I can view all the most recent posts by most recently created so that I am up to date and always see the newest posts.
+  - As a User I can view all the most recent posts by most recently created so that I am up to date and always see the newest posts.
 
 Search for posts by keywords:
 
@@ -407,7 +407,7 @@ I've also made sure in the front end using currentUser hook that user must be si
 
 - Restricted role-based features for making posts, comments and profiles.
 
-- Homepage welcoming user to the site and links to navigate through he site and options to sign in or sign up to an account.
+- Homepage welcoming user to the site and links to navigate through the site and options to sign in or sign up to an account.
 
 [Back to top](#strongest-avenger-react)
 
@@ -479,7 +479,7 @@ Mobile:
 
 The popular profiles component displays to the user the most followed profiles on the site. Clicking on the users profile takes you to view that users profile.
 
-If the user is logged in the popular profiles component will also display a follow button, which will allow the logged in user to now follow this user and see there posts in the feed page. If the user is logged in and is already following one of the popular profiles it will then display an unfollow button, if the user decides to unfollow this user.
+If the user is logged in the popular profiles component will also display a follow button, which will allow the logged in user to now follow this user and see their posts in the feed page. If the user is logged in and is already following one of the popular profiles it will then display an unfollow button, if the user decides to unfollow this user.
 
 Desktop (logged in):
 
@@ -753,7 +753,7 @@ Used to show alert messages to inform user of different actions. This was passed
 
 ***Asset.js***
 
-Used so that spinner, image or message can be displayed. These were passed as props so I was able to render a spinner when loading or an image an message to where was needed.
+Used so that spinner, image or message can be displayed. These were passed as props so I was able to render a spinner when loading or an image and message to where was needed.
 
 ***Avatar.js***
 
@@ -1020,7 +1020,7 @@ At the end of the project I decided to combine my backend and frontend projects 
 
 - Cloudinary - For storing the data for my posts.
 
-- StackOverflow - For helping give me an ideas on how to overcome issues I encountered.
+- StackOverflow - For helping give me with ideas on how to overcome issues I encountered.
 
 - Google - For use of all images and logo in the project.
 
@@ -1028,7 +1028,7 @@ At the end of the project I decided to combine my backend and frontend projects 
 
 - Google Fonts - For supplying the fonts used.
 
-- Font Awesome-  For Providing the icons used through out this project.
+- Font Awesome-  For Providing the icons used throughout this project.
 
 [Back to top](#strongest-avenger-react)
 
