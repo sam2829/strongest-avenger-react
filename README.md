@@ -814,7 +814,7 @@ This is re-used across many pages, displaying the most popular profiles. This wa
 
 ***CreateReportFormFields.js***
 
-Used so that user can provide information and create a report. This was separated into its own file to improve code readability and for future additions or modifications.
+Used so that user can provide information and create a report. This was separated into its own file to improve code readability avoid code repetition and for future additions or modifications. 
 
 ## Custom Hooks
 
