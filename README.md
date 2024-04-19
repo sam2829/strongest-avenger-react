@@ -261,6 +261,18 @@ Admin can delete posts, comments:
 
   - As a site admin I can delete any posts, comments etc so that any issues can be resolved effectively and users can have a better user experience.
 
+User can retrieve reports:
+  
+  - As a user I can view the reports I have submitted so that I can check I have provided the correct information and check if it has been resolved.
+
+User can edit their own reports:
+
+  - As a user I can edit any reports I have made which haven't been resolved so that I can make sure all details are correct and change any that aren't.
+
+User can delete their own reports:
+
+  - As a user I can delete any of my own reports made so that if I no longer have an issue or if I wish to remove my resolved reports.
+
   [Back to top](#strongest-avenger-react)
 
 ### The Skeleton Plane
