@@ -241,7 +241,10 @@ Report page:
 
 ### ESLint JavaScript
 
-Most of the code validation was done through the Gitpod ide problems tab and with the help of the prettier code formatting extension.
+Most of the JavaScript code validation was done through the Gitpod ide problems tab and with the help of the prettier code formatting extension and ESLint running through the production of the app.
+
+All JavaScript files were then validated using ESLint Javascript validator, which reported back no issues. 
+
 
 [Back to top](#strongest-avenger-react)
 
