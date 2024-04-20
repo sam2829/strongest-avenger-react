@@ -115,6 +115,87 @@ The kanban board was created using GitHub projects, this helped me be able to se
 
 #### User Stories
 
+***Themes***
+
+Themes were developed using the project goals as a starting point. These included:
+
+  - Account management - This was necessary so that the user could create an account and have full functionality of the app.
+
+  - Post mamnagement - This was necessary so that the user is able to have full functionality of the posts.
+
+  - Comment management - This was necessary so that the user is able to have full functionality of comments.
+
+  - Like management - This was necessary so that the user is able to have full functionality of liking a post.
+
+  - Follow management - This was necessary so that the user is able to have full functionality of following other users.
+
+  - Report management - This was necessary so that the user was able to have full functionality of reports.
+
+***Epics***
+
+Themes were then refined into the following epics:
+
+- Account management:
+  
+  - Account registration
+
+  - Account sign in
+
+  - Account sign out
+
+  - User profile
+
+- Post management:
+ 
+  - Create post
+
+  - Edit user post
+
+  - Delete user post
+
+  - Retrieve posts
+
+  - Filter posts
+
+- Comment management:
+
+  - Create comment
+
+  - Edit user comment
+
+  - Delete user comment
+
+  - Retrieve comments
+
+  - Filter comments
+
+- Like management:
+
+  - Like a post
+
+  - Unlike a post
+
+- Follow management:
+
+  - Follow another user
+
+  - Unfollow user
+
+- Report management:
+
+  - Create a report
+
+  - Edit user report
+
+  - Delete user report
+
+  - Retrieve reports
+
+  - Filter user reports
+
+
+***User stories***
+
 The following user stories were completed throughout the development.
 
 Navbar navigation:
