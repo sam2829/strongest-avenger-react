@@ -111,6 +111,17 @@ The kanban board was created using GitHub projects, this helped me be able to se
 
 ![User Stories Screenshot](docs/readme_screenshots/user-story-screenshot.png)
 
+Each User story was placed into it's own milestone iteration to help schedule the development of the project. These iterations can be set with dates but I did not do this due to fitting in around work and other commitments. In the iteration you can close a user story when finished, this will also keep track of how much is completed.
+
+Incomplete milestones:
+
+![Incomplete Milestones](docs/readme_screenshots/incomplete-iterations.png)
+
+Completed milestones:
+
+![Completed Milestones](docs/readme_screenshots/completed-iterations.png)
+
+
 [Back to top](#strongest-avenger-react)
 
 #### User Stories
@@ -180,6 +191,10 @@ Themes were then refined into the following epics:
   - Follow another user
 
   - Unfollow user
+
+- Profile management:
+
+  - Edit user profile
 
 - Report management:
 
