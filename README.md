@@ -1138,5 +1138,7 @@ At the end of the project I decided to combine my backend and frontend projects 
 
 - Font Awesome-  For Providing the icons used throughout this project.
 
+- Disney Plus - For use of the videos posted.
+
 [Back to top](#strongest-avenger-react)
 
