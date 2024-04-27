@@ -811,6 +811,8 @@ The report page allows the use to report anything they feel they need to on the 
 
 The form must be filled out correctly to submit. Error message will be displayed to help the user fill out correctly.
 
+User is also able to view a list of all their reports and also to edit any of their own reports, as long as it has not already been resolved and form is filled out correctly.
+
 Report form:
 
 ![Report Form](docs/readme_screenshots/report-form.png)
@@ -818,6 +820,20 @@ Report form:
 Report form with errors:
 
 ![Report Form Errors](docs/readme_screenshots/report-form-errors.png)
+
+Report page:
+
+![Report Page 1](docs/readme_screenshots/report-list-1.png)
+
+![Report Page 2](docs/readme_screenshots/report-list-2.png)
+
+Report edit form:
+
+![Report Edit Form](docs/readme_screenshots/report-edit.png)
+
+Report edit form with errors:
+
+![Report Edit Form Errors](docs/readme_screenshots/report-edit-errors.png)
 
 ***Error Page***
 
