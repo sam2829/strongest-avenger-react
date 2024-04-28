@@ -12,6 +12,8 @@ This is my fifth portfolio project for the Code Institute and the goal with this
 
 This repository is for the React front end of Strongest Avenger. The project also utilises a Django Rest Framework API, which you can find the link to that repository [here](https://github.com/sam2829/strongest-avenger-drf)
 
+Here is a live version of my project [Strongest Avenger](https://strongest-avenger-drf-api-c57eb1c3e676.herokuapp.com/)
+
 ## Contents
 
 - [Strongest Avenger React](#strongest-avenger-react)
