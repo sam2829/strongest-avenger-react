@@ -132,7 +132,7 @@ Themes were developed using the project goals as a starting point. These include
 
   - Account management - This was necessary so that the user could create an account and have full functionality of the app.
 
-  - Post mamnagement - This was necessary so that the user is able to have full functionality of the posts.
+  - Post management - This was necessary so that the user is able to have full functionality of the posts.
 
   - Comment management - This was necessary so that the user is able to have full functionality of comments.
 
